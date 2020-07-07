@@ -1,0 +1,4 @@
+/home/jdoe/Desktop/project/bin/CMakeFiles/rebuild_cache.dir
+/home/jdoe/Desktop/project/bin/CMakeFiles/edit_cache.dir
+/home/jdoe/Desktop/project/bin/CMakeFiles/test_voronoi.dir
+/home/jdoe/Desktop/project/bin/CMakeFiles/coverage.dir

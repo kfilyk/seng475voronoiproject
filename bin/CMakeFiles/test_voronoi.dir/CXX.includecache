@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jdoe/Desktop/project/app/test_voronoi.cpp
+catch2/catch.hpp
+-
+../include/graph.hpp
+/home/jdoe/Desktop/project/include/graph.hpp
+
+/home/jdoe/Desktop/project/include/graph.hpp
+iostream
+-
+CGAL/Simple_cartesian.h
+-
+
