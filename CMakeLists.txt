@@ -14,6 +14,8 @@ endif()
 
 add_executable(test_voronoi ./app/test_voronoi.cpp)
 target_link_libraries(test_voronoi CGAL::CGAL)
+add_executable(gen_points ./include/gen_points.cpp)
+
 
 if(ENABLE_COVERAGE)
 	setup_target_for_coverage_lcov(

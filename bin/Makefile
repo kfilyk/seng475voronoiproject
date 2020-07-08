@@ -134,6 +134,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named coverage
+
+# Build rule for target.
+coverage: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 coverage
+.PHONY : coverage
+
+# fast build rule for target.
+coverage/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/coverage.dir/build.make CMakeFiles/coverage.dir/build
+.PHONY : coverage/fast
+
+#=============================================================================
 # Target rules for targets named test_voronoi
 
 # Build rule for target.
@@ -147,17 +160,17 @@ test_voronoi/fast:
 .PHONY : test_voronoi/fast
 
 #=============================================================================
-# Target rules for targets named coverage
+# Target rules for targets named gen_points
 
 # Build rule for target.
-coverage: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 coverage
-.PHONY : coverage
+gen_points: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gen_points
+.PHONY : gen_points
 
 # fast build rule for target.
-coverage/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/coverage.dir/build.make CMakeFiles/coverage.dir/build
-.PHONY : coverage/fast
+gen_points/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gen_points.dir/build.make CMakeFiles/gen_points.dir/build
+.PHONY : gen_points/fast
 
 app/test_voronoi.o: app/test_voronoi.cpp.o
 
@@ -186,6 +199,33 @@ app/test_voronoi.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_voronoi.dir/build.make CMakeFiles/test_voronoi.dir/app/test_voronoi.cpp.s
 .PHONY : app/test_voronoi.cpp.s
 
+include/gen_points.o: include/gen_points.cpp.o
+
+.PHONY : include/gen_points.o
+
+# target to build an object file
+include/gen_points.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gen_points.dir/build.make CMakeFiles/gen_points.dir/include/gen_points.cpp.o
+.PHONY : include/gen_points.cpp.o
+
+include/gen_points.i: include/gen_points.cpp.i
+
+.PHONY : include/gen_points.i
+
+# target to preprocess a source file
+include/gen_points.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gen_points.dir/build.make CMakeFiles/gen_points.dir/include/gen_points.cpp.i
+.PHONY : include/gen_points.cpp.i
+
+include/gen_points.s: include/gen_points.cpp.s
+
+.PHONY : include/gen_points.s
+
+# target to generate assembly for a file
+include/gen_points.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gen_points.dir/build.make CMakeFiles/gen_points.dir/include/gen_points.cpp.s
+.PHONY : include/gen_points.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -195,10 +235,14 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... coverage"
+	@echo "... gen_points"
 	@echo "... test_voronoi"
 	@echo "... app/test_voronoi.o"
 	@echo "... app/test_voronoi.i"
 	@echo "... app/test_voronoi.s"
+	@echo "... include/gen_points.o"
+	@echo "... include/gen_points.i"
+	@echo "... include/gen_points.s"
 .PHONY : help
 
 

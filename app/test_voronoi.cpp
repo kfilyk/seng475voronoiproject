@@ -1,6 +1,8 @@
 #define CATCH_CONFIG_MAIN
 #include <catch2/catch.hpp>
 #include "../include/graph.hpp"
+#include "CGAL/Exact_predicates_inexact_constructions_kernel.h>
+
 
 using namespace std;
 using namespace voronoi;

@@ -65,6 +65,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/test_voronoi.dir/DependInfo.cmake"
   "CMakeFiles/coverage.dir/DependInfo.cmake"
+  "CMakeFiles/test_voronoi.dir/DependInfo.cmake"
+  "CMakeFiles/gen_points.dir/DependInfo.cmake"
   )

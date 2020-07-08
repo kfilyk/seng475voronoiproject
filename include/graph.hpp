@@ -1,21 +1,14 @@
 #include <iostream>
-#include <CGAL/Simple_cartesian.h>
-#include "CGAL/Exact_predicates_inexact_constructions_kernel.h>"
+#include <CGAL/Cartesian.h>
 
-
-typedef CGAL::Simple_cartesian<double> Kernel;
+typedef CGAL::Cartesian<double> K;
 typedef Kernel::Point_2<K> Point;
-typedef Kernel::Segment_2<K> Segment;
-//typedef CGAL::Polygon_2<K> Polygon;
+typedef Kernel::Line_2<K> Line;
 using namespace std;
 
 namespace voronoi {
 
-	struct Line {
-		Point p1;
-		Point p2;
-	};
-
+	
 /*
 	class Cell {
 		private:
