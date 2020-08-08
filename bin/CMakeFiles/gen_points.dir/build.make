@@ -80,27 +80,27 @@ include CMakeFiles/gen_points.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/gen_points.dir/flags.make
 
-CMakeFiles/gen_points.dir/app/gen_points.cpp.o: CMakeFiles/gen_points.dir/flags.make
-CMakeFiles/gen_points.dir/app/gen_points.cpp.o: ../app/gen_points.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jdoe/Desktop/project/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/gen_points.dir/app/gen_points.cpp.o"
-	/opt/sde/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gen_points.dir/app/gen_points.cpp.o -c /home/jdoe/Desktop/project/app/gen_points.cpp
+CMakeFiles/gen_points.dir/app/utilities/gen_points.cpp.o: CMakeFiles/gen_points.dir/flags.make
+CMakeFiles/gen_points.dir/app/utilities/gen_points.cpp.o: ../app/utilities/gen_points.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jdoe/Desktop/project/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/gen_points.dir/app/utilities/gen_points.cpp.o"
+	/opt/sde/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gen_points.dir/app/utilities/gen_points.cpp.o -c /home/jdoe/Desktop/project/app/utilities/gen_points.cpp
 
-CMakeFiles/gen_points.dir/app/gen_points.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gen_points.dir/app/gen_points.cpp.i"
-	/opt/sde/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jdoe/Desktop/project/app/gen_points.cpp > CMakeFiles/gen_points.dir/app/gen_points.cpp.i
+CMakeFiles/gen_points.dir/app/utilities/gen_points.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gen_points.dir/app/utilities/gen_points.cpp.i"
+	/opt/sde/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jdoe/Desktop/project/app/utilities/gen_points.cpp > CMakeFiles/gen_points.dir/app/utilities/gen_points.cpp.i
 
-CMakeFiles/gen_points.dir/app/gen_points.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gen_points.dir/app/gen_points.cpp.s"
-	/opt/sde/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jdoe/Desktop/project/app/gen_points.cpp -o CMakeFiles/gen_points.dir/app/gen_points.cpp.s
+CMakeFiles/gen_points.dir/app/utilities/gen_points.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gen_points.dir/app/utilities/gen_points.cpp.s"
+	/opt/sde/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jdoe/Desktop/project/app/utilities/gen_points.cpp -o CMakeFiles/gen_points.dir/app/utilities/gen_points.cpp.s
 
 # Object files for target gen_points
 gen_points_OBJECTS = \
-"CMakeFiles/gen_points.dir/app/gen_points.cpp.o"
+"CMakeFiles/gen_points.dir/app/utilities/gen_points.cpp.o"
 
 # External object files for target gen_points
 gen_points_EXTERNAL_OBJECTS =
 
-gen_points: CMakeFiles/gen_points.dir/app/gen_points.cpp.o
+gen_points: CMakeFiles/gen_points.dir/app/utilities/gen_points.cpp.o
 gen_points: CMakeFiles/gen_points.dir/build.make
 gen_points: CMakeFiles/gen_points.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jdoe/Desktop/project/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable gen_points"

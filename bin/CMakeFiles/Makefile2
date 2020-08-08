@@ -97,6 +97,7 @@ clean: CMakeFiles/gen_points.dir/clean
 # Target rules for target CMakeFiles/coverage.dir
 
 # All Build rule for target.
+CMakeFiles/coverage.dir/all: CMakeFiles/gen_points.dir/all
 CMakeFiles/coverage.dir/all: CMakeFiles/test_voronoi.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/coverage.dir/build.make CMakeFiles/coverage.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/coverage.dir/build.make CMakeFiles/coverage.dir/build
@@ -105,7 +106,7 @@ CMakeFiles/coverage.dir/all: CMakeFiles/test_voronoi.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/coverage.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jdoe/Desktop/project/bin/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jdoe/Desktop/project/bin/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/coverage.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/jdoe/Desktop/project/bin/CMakeFiles 0
 .PHONY : CMakeFiles/coverage.dir/rule

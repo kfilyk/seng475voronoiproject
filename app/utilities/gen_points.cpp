@@ -10,8 +10,12 @@ int main() {
 	srand(time(NULL));
 	int r = rand()%1000;
 	for(int i = 0; i < 100; i++) {
+		file << r;
+		file << " ";
 		r = rand() % 1000;
 		file << r;
+		file <<"\n";
+
 	}
 	file.close();
 }

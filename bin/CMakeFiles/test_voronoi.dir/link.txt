@@ -1,1 +1,1 @@
-/opt/sde/bin/c++   -fsanitize=address -g -fprofile-arcs -ftest-coverage -g   CMakeFiles/test_voronoi.dir/app/test_voronoi.cpp.o  -o test_voronoi  /usr/lib64/libmpfr.so /usr/lib64/libgmp.so 
+/opt/sde/bin/c++   -fsanitize=address -g -fprofile-arcs -ftest-coverage -g   CMakeFiles/test_voronoi.dir/app/tests/test_voronoi.cpp.o  -o test_voronoi  /usr/lib64/libmpfr.so /usr/lib64/libgmp.so 

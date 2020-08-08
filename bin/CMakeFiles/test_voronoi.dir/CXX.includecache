@@ -6,3 +6,11 @@
 
 #IncludeRegexTransform: 
 
+/home/jdoe/Desktop/project/app/tests/test_voronoi.cpp
+catch2/catch.hpp
+-
+../../include/voronoi_constructs/Beachline.hpp
+/home/jdoe/Desktop/project/include/voronoi_constructs/Beachline.hpp
+
+/home/jdoe/Desktop/project/include/voronoi_constructs/Beachline.hpp
+

@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jdoe/Desktop/project/app/utilities/gen_points.cpp
+iostream
+-
+stdlib.h
+-
+time.h
+-
+fstream
+-
+

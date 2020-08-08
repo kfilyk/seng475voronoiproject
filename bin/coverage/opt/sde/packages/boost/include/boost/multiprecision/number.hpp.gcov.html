@@ -31,18 +31,18 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">5</td>
-            <td class="headerCovTableEntry">5</td>
-            <td class="headerCovTableEntryHi">100.0 %</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2020-07-07 20:06:46</td>
+            <td class="headerValue">2020-08-08 14:09:33</td>
             <td></td>
             <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">3</td>
-            <td class="headerCovTableEntry">3</td>
-            <td class="headerCovTableEntryHi">100.0 %</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -131,7 +131,7 @@
 <a name="53"><span class="lineNum">      53 </span>                :            :    typedef Backend                                  backend_type;</a>
 <a name="54"><span class="lineNum">      54 </span>                :            :    typedef typename component_type&lt;self_type&gt;::type value_type;</a>
 <a name="55"><span class="lineNum">      55 </span>                :            :    BOOST_MP_FORCEINLINE BOOST_CONSTEXPR number() BOOST_MP_NOEXCEPT_IF(noexcept(Backend())) {}</a>
-<a name="56"><span class="lineNum">      56 </span>                :<span class="lineCov">          2 :    BOOST_MP_FORCEINLINE BOOST_CONSTEXPR number(const number&amp; e) BOOST_MP_NOEXCEPT_IF(noexcept(Backend(std::declval&lt;Backend const&amp;&gt;()))) : m_backend(e.m_backend) {}</span></a>
+<a name="56"><span class="lineNum">      56 </span>                :<span class="lineNoCov">          0 :    BOOST_MP_FORCEINLINE BOOST_CONSTEXPR number(const number&amp; e) BOOST_MP_NOEXCEPT_IF(noexcept(Backend(std::declval&lt;Backend const&amp;&gt;()))) : m_backend(e.m_backend) {}</span></a>
 <a name="57"><span class="lineNum">      57 </span>                :            :    template &lt;class V&gt;</a>
 <a name="58"><span class="lineNum">      58 </span>                :            :    BOOST_MP_FORCEINLINE BOOST_MP_CXX14_CONSTEXPR number(const V&amp; v, typename boost::enable_if_c&lt;</a>
 <a name="59"><span class="lineNum">      59 </span>                :            :                                                (boost::is_arithmetic&lt;V&gt;::value || is_same&lt;std::string, V&gt;::value || is_convertible&lt;V, const char*&gt;::value) &amp;&amp; !is_convertible&lt;typename detail::canonical&lt;V, Backend&gt;::type, Backend&gt;::value &amp;&amp; !detail::is_restricted_conversion&lt;typename detail::canonical&lt;V, Backend&gt;::type, Backend&gt;::value</a>
@@ -143,13 +143,13 @@
 <a name="65"><span class="lineNum">      65 </span>                :            :       m_backend = canonical_value(v);</a>
 <a name="66"><span class="lineNum">      66 </span>                :            :    }</a>
 <a name="67"><span class="lineNum">      67 </span>                :            :    template &lt;class V&gt;</a>
-<a name="68"><span class="lineNum">      68 </span>                :<span class="lineCov">          2 :    BOOST_MP_FORCEINLINE BOOST_CONSTEXPR number(const V&amp; v, typename boost::enable_if_c&lt;</span></a>
+<a name="68"><span class="lineNum">      68 </span>                :<span class="lineNoCov">          0 :    BOOST_MP_FORCEINLINE BOOST_CONSTEXPR number(const V&amp; v, typename boost::enable_if_c&lt;</span></a>
 <a name="69"><span class="lineNum">      69 </span>                :            :                                                                is_convertible&lt;typename detail::canonical&lt;V, Backend&gt;::type, Backend&gt;::value &amp;&amp; !detail::is_restricted_conversion&lt;typename detail::canonical&lt;V, Backend&gt;::type, Backend&gt;::value&gt;::type* = 0)</a>
 <a name="70"><span class="lineNum">      70 </span>                :            : #ifndef BOOST_INTEL</a>
 <a name="71"><span class="lineNum">      71 </span>                :            :        BOOST_MP_NOEXCEPT_IF(noexcept(Backend(std::declval&lt;typename detail::canonical&lt;V, Backend&gt;::type const&amp;&gt;())))</a>
 <a name="72"><span class="lineNum">      72 </span>                :            : #endif</a>
-<a name="73"><span class="lineNum">      73 </span>                :<span class="lineCov">          2 :        : m_backend(canonical_value(v))</span></a>
-<a name="74"><span class="lineNum">      74 </span>                :<span class="lineCov">          2 :    {}</span></a>
+<a name="73"><span class="lineNum">      73 </span>                :<span class="lineNoCov">          0 :        : m_backend(canonical_value(v))</span></a>
+<a name="74"><span class="lineNum">      74 </span>                :<span class="lineNoCov">          0 :    {}</span></a>
 <a name="75"><span class="lineNum">      75 </span>                :            :    template &lt;class V&gt;</a>
 <a name="76"><span class="lineNum">      76 </span>                :            :    BOOST_MP_FORCEINLINE BOOST_CONSTEXPR number(const V&amp; v, unsigned digits10, typename boost::enable_if_c&lt;(boost::is_arithmetic&lt;V&gt;::value || is_same&lt;std::string, V&gt;::value || is_convertible&lt;V, const char*&gt;::value) &amp;&amp; !detail::is_restricted_conversion&lt;typename detail::canonical&lt;V, Backend&gt;::type, Backend&gt;::value &amp;&amp; (boost::multiprecision::number_category&lt;Backend&gt;::value != boost::multiprecision::number_kind_complex) &amp;&amp; (boost::multiprecision::number_category&lt;Backend&gt;::value != boost::multiprecision::number_kind_rational)</a>
 <a name="77"><span class="lineNum">      77 </span>                :            : #ifdef BOOST_HAS_FLOAT128</a>
@@ -2069,7 +2069,7 @@
 <a name="1991"><span class="lineNum">    1991 </span>                :            :    static BOOST_MP_FORCEINLINE BOOST_CONSTEXPR const B2&amp; canonical_value(const number&lt;B2, ET&gt;&amp; v) BOOST_NOEXCEPT { return v.backend(); }</a>
 <a name="1992"><span class="lineNum">    1992 </span>                :            :    template &lt;class V&gt;</a>
 <a name="1993"><span class="lineNum">    1993 </span>                :            :    static BOOST_MP_FORCEINLINE BOOST_CONSTEXPR typename boost::disable_if&lt;is_same&lt;typename detail::canonical&lt;V, Backend&gt;::type, V&gt;, typename detail::canonical&lt;V, Backend&gt;::type&gt;::type</a>
-<a name="1994"><span class="lineNum">    1994 </span>                :<span class="lineCov">          2 :    canonical_value(const V&amp; v) BOOST_NOEXCEPT { return static_cast&lt;typename detail::canonical&lt;V, Backend&gt;::type&gt;(v); }</span></a>
+<a name="1994"><span class="lineNum">    1994 </span>                :<span class="lineNoCov">          0 :    canonical_value(const V&amp; v) BOOST_NOEXCEPT { return static_cast&lt;typename detail::canonical&lt;V, Backend&gt;::type&gt;(v); }</span></a>
 <a name="1995"><span class="lineNum">    1995 </span>                :            :    template &lt;class V&gt;</a>
 <a name="1996"><span class="lineNum">    1996 </span>                :            :    static BOOST_MP_FORCEINLINE BOOST_CONSTEXPR typename boost::enable_if_c&lt;is_same&lt;typename detail::canonical&lt;V, Backend&gt;::type, V&gt;::value, const V&amp;&gt;::type</a>
 <a name="1997"><span class="lineNum">    1997 </span>                :            :    canonical_value(const V&amp; v) BOOST_NOEXCEPT { return v; }</a>

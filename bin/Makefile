@@ -172,59 +172,59 @@ gen_points/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gen_points.dir/build.make CMakeFiles/gen_points.dir/build
 .PHONY : gen_points/fast
 
-app/gen_points.o: app/gen_points.cpp.o
+app/tests/test_voronoi.o: app/tests/test_voronoi.cpp.o
 
-.PHONY : app/gen_points.o
-
-# target to build an object file
-app/gen_points.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gen_points.dir/build.make CMakeFiles/gen_points.dir/app/gen_points.cpp.o
-.PHONY : app/gen_points.cpp.o
-
-app/gen_points.i: app/gen_points.cpp.i
-
-.PHONY : app/gen_points.i
-
-# target to preprocess a source file
-app/gen_points.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gen_points.dir/build.make CMakeFiles/gen_points.dir/app/gen_points.cpp.i
-.PHONY : app/gen_points.cpp.i
-
-app/gen_points.s: app/gen_points.cpp.s
-
-.PHONY : app/gen_points.s
-
-# target to generate assembly for a file
-app/gen_points.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gen_points.dir/build.make CMakeFiles/gen_points.dir/app/gen_points.cpp.s
-.PHONY : app/gen_points.cpp.s
-
-app/test_voronoi.o: app/test_voronoi.cpp.o
-
-.PHONY : app/test_voronoi.o
+.PHONY : app/tests/test_voronoi.o
 
 # target to build an object file
-app/test_voronoi.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_voronoi.dir/build.make CMakeFiles/test_voronoi.dir/app/test_voronoi.cpp.o
-.PHONY : app/test_voronoi.cpp.o
+app/tests/test_voronoi.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_voronoi.dir/build.make CMakeFiles/test_voronoi.dir/app/tests/test_voronoi.cpp.o
+.PHONY : app/tests/test_voronoi.cpp.o
 
-app/test_voronoi.i: app/test_voronoi.cpp.i
+app/tests/test_voronoi.i: app/tests/test_voronoi.cpp.i
 
-.PHONY : app/test_voronoi.i
+.PHONY : app/tests/test_voronoi.i
 
 # target to preprocess a source file
-app/test_voronoi.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_voronoi.dir/build.make CMakeFiles/test_voronoi.dir/app/test_voronoi.cpp.i
-.PHONY : app/test_voronoi.cpp.i
+app/tests/test_voronoi.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_voronoi.dir/build.make CMakeFiles/test_voronoi.dir/app/tests/test_voronoi.cpp.i
+.PHONY : app/tests/test_voronoi.cpp.i
 
-app/test_voronoi.s: app/test_voronoi.cpp.s
+app/tests/test_voronoi.s: app/tests/test_voronoi.cpp.s
 
-.PHONY : app/test_voronoi.s
+.PHONY : app/tests/test_voronoi.s
 
 # target to generate assembly for a file
-app/test_voronoi.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_voronoi.dir/build.make CMakeFiles/test_voronoi.dir/app/test_voronoi.cpp.s
-.PHONY : app/test_voronoi.cpp.s
+app/tests/test_voronoi.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_voronoi.dir/build.make CMakeFiles/test_voronoi.dir/app/tests/test_voronoi.cpp.s
+.PHONY : app/tests/test_voronoi.cpp.s
+
+app/utilities/gen_points.o: app/utilities/gen_points.cpp.o
+
+.PHONY : app/utilities/gen_points.o
+
+# target to build an object file
+app/utilities/gen_points.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gen_points.dir/build.make CMakeFiles/gen_points.dir/app/utilities/gen_points.cpp.o
+.PHONY : app/utilities/gen_points.cpp.o
+
+app/utilities/gen_points.i: app/utilities/gen_points.cpp.i
+
+.PHONY : app/utilities/gen_points.i
+
+# target to preprocess a source file
+app/utilities/gen_points.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gen_points.dir/build.make CMakeFiles/gen_points.dir/app/utilities/gen_points.cpp.i
+.PHONY : app/utilities/gen_points.cpp.i
+
+app/utilities/gen_points.s: app/utilities/gen_points.cpp.s
+
+.PHONY : app/utilities/gen_points.s
+
+# target to generate assembly for a file
+app/utilities/gen_points.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gen_points.dir/build.make CMakeFiles/gen_points.dir/app/utilities/gen_points.cpp.s
+.PHONY : app/utilities/gen_points.cpp.s
 
 # Help Target
 help:
@@ -237,12 +237,12 @@ help:
 	@echo "... coverage"
 	@echo "... gen_points"
 	@echo "... test_voronoi"
-	@echo "... app/gen_points.o"
-	@echo "... app/gen_points.i"
-	@echo "... app/gen_points.s"
-	@echo "... app/test_voronoi.o"
-	@echo "... app/test_voronoi.i"
-	@echo "... app/test_voronoi.s"
+	@echo "... app/tests/test_voronoi.o"
+	@echo "... app/tests/test_voronoi.i"
+	@echo "... app/tests/test_voronoi.s"
+	@echo "... app/utilities/gen_points.o"
+	@echo "... app/utilities/gen_points.i"
+	@echo "... app/utilities/gen_points.s"
 .PHONY : help
 
 

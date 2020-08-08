@@ -31,18 +31,18 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">27</td>
+            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">39</td>
-            <td class="headerCovTableEntryLo">69.2 %</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2020-07-07 20:06:46</td>
+            <td class="headerValue">2020-08-08 14:09:33</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">13</td>
+            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">14</td>
-            <td class="headerCovTableEntryHi">92.9 %</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">7</td>
+            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">16</td>
-            <td class="headerCovTableEntryLo">43.8 %</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
           </tr>
           <tr><td><img src="../../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -235,7 +235,7 @@
 <a name="157"><span class="lineNum">     157 </span>                :            :    if (new_size &lt; min_size)</a>
 <a name="158"><span class="lineNum">     158 </span>                :            :       BOOST_THROW_EXCEPTION(std::overflow_error(&quot;Unable to allocate sufficient storage for the value of the result: value overflows the maximum allowable magnitude.&quot;));</a>
 <a name="159"><span class="lineNum">     159 </span>                :            : }</a>
-<a name="160"><span class="lineNum">     160 </span>                :<span class="lineCov">          2 : inline BOOST_MP_CXX14_CONSTEXPR void verify_new_size(unsigned /*new_size*/, unsigned /*min_size*/, const mpl::int_&lt;unchecked&gt;&amp;) {}</span></a>
+<a name="160"><span class="lineNum">     160 </span>                :<span class="lineNoCov">          0 : inline BOOST_MP_CXX14_CONSTEXPR void verify_new_size(unsigned /*new_size*/, unsigned /*min_size*/, const mpl::int_&lt;unchecked&gt;&amp;) {}</span></a>
 <a name="161"><span class="lineNum">     161 </span>                :            : </a>
 <a name="162"><span class="lineNum">     162 </span>                :            : template &lt;class U&gt;</a>
 <a name="163"><span class="lineNum">     163 </span>                :            : inline BOOST_MP_CXX14_CONSTEXPR void verify_limb_mask(bool b, U limb, U mask, const mpl::int_&lt;checked&gt;&amp;)</a>
@@ -299,8 +299,8 @@
 <a name="221"><span class="lineNum">     221 </span>                :            :       limb_type        first;</a>
 <a name="222"><span class="lineNum">     222 </span>                :            :       double_limb_type double_first;</a>
 <a name="223"><span class="lineNum">     223 </span>                :            : </a>
-<a name="224"><span class="lineNum">     224 </span>                :<span class="lineCov">          2 :       BOOST_CONSTEXPR data_type() : first(0) {}</span></a>
-<a name="225"><span class="lineNum">     225 </span>                :<span class="lineCov">          2 :       BOOST_CONSTEXPR data_type(limb_type i) : first(i) {}</span></a>
+<a name="224"><span class="lineNum">     224 </span>                :<span class="lineNoCov">          0 :       BOOST_CONSTEXPR data_type() : first(0) {}</span></a>
+<a name="225"><span class="lineNum">     225 </span>                :<span class="lineNoCov">          0 :       BOOST_CONSTEXPR data_type(limb_type i) : first(i) {}</span></a>
 <a name="226"><span class="lineNum">     226 </span>                :            :       BOOST_CONSTEXPR data_type(signed_limb_type i) : first(i &lt; 0 ? static_cast&lt;limb_type&gt;(boost::multiprecision::detail::unsigned_abs(i)) : i) {}</a>
 <a name="227"><span class="lineNum">     227 </span>                :            : #if BOOST_ENDIAN_LITTLE_BYTE</a>
 <a name="228"><span class="lineNum">     228 </span>                :            :       BOOST_CONSTEXPR data_type(double_limb_type i) : double_first(i)</a>
@@ -317,11 +317,11 @@
 <a name="239"><span class="lineNum">     239 </span>                :            :    //</a>
 <a name="240"><span class="lineNum">     240 </span>                :            :    // Direct construction:</a>
 <a name="241"><span class="lineNum">     241 </span>                :            :    //</a>
-<a name="242"><span class="lineNum">     242 </span>                :<span class="lineCov">          2 :    BOOST_MP_FORCEINLINE BOOST_CONSTEXPR cpp_int_base(limb_type i) BOOST_NOEXCEPT</span></a>
+<a name="242"><span class="lineNum">     242 </span>                :<span class="lineNoCov">          0 :    BOOST_MP_FORCEINLINE BOOST_CONSTEXPR cpp_int_base(limb_type i) BOOST_NOEXCEPT</span></a>
 <a name="243"><span class="lineNum">     243 </span>                :            :        : m_data(i),</a>
 <a name="244"><span class="lineNum">     244 </span>                :            :          m_limbs(1),</a>
 <a name="245"><span class="lineNum">     245 </span>                :            :          m_sign(false),</a>
-<a name="246"><span class="lineNum">     246 </span>                :<span class="lineCov">          2 :          m_internal(true) {}</span></a>
+<a name="246"><span class="lineNum">     246 </span>                :<span class="lineNoCov">          0 :          m_internal(true) {}</span></a>
 <a name="247"><span class="lineNum">     247 </span>                :            :    BOOST_MP_FORCEINLINE BOOST_CONSTEXPR cpp_int_base(signed_limb_type i) BOOST_NOEXCEPT</a>
 <a name="248"><span class="lineNum">     248 </span>                :            :        : m_data(i),</a>
 <a name="249"><span class="lineNum">     249 </span>                :            :          m_limbs(1),</a>
@@ -345,10 +345,10 @@
 <a name="267"><span class="lineNum">     267 </span>                :            :    //</a>
 <a name="268"><span class="lineNum">     268 </span>                :<span class="lineNoCov">          0 :    BOOST_MP_FORCEINLINE allocator_type&amp; allocator() BOOST_NOEXCEPT { return base_type::get(); }</span></a>
 <a name="269"><span class="lineNum">     269 </span>                :            :    BOOST_MP_FORCEINLINE const allocator_type&amp; allocator() const BOOST_NOEXCEPT { return base_type::get(); }</a>
-<a name="270"><span class="lineNum">     270 </span>                :<span class="lineCov">          6 :    BOOST_MP_FORCEINLINE unsigned              size() const BOOST_NOEXCEPT { return m_limbs; }</span></a>
-<a name="271"><span class="lineNum">     271 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :    BOOST_MP_FORCEINLINE limb_pointer limbs() BOOST_NOEXCEPT { return m_internal ? m_data.la : m_data.ld.data; }</span></a>
-<a name="272"><span class="lineNum">     272 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :    BOOST_MP_FORCEINLINE const_limb_pointer limbs() const BOOST_NOEXCEPT { return m_internal ? m_data.la : m_data.ld.data; }</span></a>
-<a name="273"><span class="lineNum">     273 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :    BOOST_MP_FORCEINLINE unsigned           capacity() const BOOST_NOEXCEPT { return m_internal ? internal_limb_count : m_data.ld.capacity; }</span></a>
+<a name="270"><span class="lineNum">     270 </span>                :<span class="lineNoCov">          0 :    BOOST_MP_FORCEINLINE unsigned              size() const BOOST_NOEXCEPT { return m_limbs; }</span></a>
+<a name="271"><span class="lineNum">     271 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :    BOOST_MP_FORCEINLINE limb_pointer limbs() BOOST_NOEXCEPT { return m_internal ? m_data.la : m_data.ld.data; }</span></a>
+<a name="272"><span class="lineNum">     272 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :    BOOST_MP_FORCEINLINE const_limb_pointer limbs() const BOOST_NOEXCEPT { return m_internal ? m_data.la : m_data.ld.data; }</span></a>
+<a name="273"><span class="lineNum">     273 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :    BOOST_MP_FORCEINLINE unsigned           capacity() const BOOST_NOEXCEPT { return m_internal ? internal_limb_count : m_data.ld.capacity; }</span></a>
 <a name="274"><span class="lineNum">     274 </span>                :            :    BOOST_MP_FORCEINLINE bool               sign() const BOOST_NOEXCEPT { return m_sign; }</a>
 <a name="275"><span class="lineNum">     275 </span>                :            :    void                                    sign(bool b) BOOST_NOEXCEPT</a>
 <a name="276"><span class="lineNum">     276 </span>                :            :    {</a>
@@ -360,16 +360,16 @@
 <a name="282"><span class="lineNum">     282 </span>                :            :             m_sign = false;</a>
 <a name="283"><span class="lineNum">     283 </span>                :            :       }</a>
 <a name="284"><span class="lineNum">     284 </span>                :            :    }</a>
-<a name="285"><span class="lineNum">     285 </span>                :<span class="lineCov">          2 :    void resize(unsigned new_size, unsigned min_size)</span></a>
+<a name="285"><span class="lineNum">     285 </span>                :<span class="lineNoCov">          0 :    void resize(unsigned new_size, unsigned min_size)</span></a>
 <a name="286"><span class="lineNum">     286 </span>                :            :    {</a>
 <a name="287"><span class="lineNum">     287 </span>                :            :       static const unsigned max_limbs = MaxBits / (CHAR_BIT * sizeof(limb_type)) + ((MaxBits % (CHAR_BIT * sizeof(limb_type))) ? 1 : 0);</a>
 <a name="288"><span class="lineNum">     288 </span>                :            :       // We never resize beyond MaxSize:</a>
-<a name="289"><span class="lineNum">     289 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          2 :       if (new_size &gt; max_limbs)</span></a>
+<a name="289"><span class="lineNum">     289 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       if (new_size &gt; max_limbs)</span></a>
 <a name="290"><span class="lineNum">     290 </span>                :<span class="lineNoCov">          0 :          new_size = max_limbs;</span></a>
-<a name="291"><span class="lineNum">     291 </span>                :<span class="lineCov">          2 :       detail::verify_new_size(new_size, min_size, checked_type());</span></a>
+<a name="291"><span class="lineNum">     291 </span>                :<span class="lineNoCov">          0 :       detail::verify_new_size(new_size, min_size, checked_type());</span></a>
 <a name="292"><span class="lineNum">     292 </span>                :            :       // See if we have enough capacity already:</a>
-<a name="293"><span class="lineNum">     293 </span>                :<span class="lineCov">          2 :       unsigned cap = capacity();</span></a>
-<a name="294"><span class="lineNum">     294 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          2 :       if (new_size &gt; cap)</span></a>
+<a name="293"><span class="lineNum">     293 </span>                :<span class="lineNoCov">          0 :       unsigned cap = capacity();</span></a>
+<a name="294"><span class="lineNum">     294 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       if (new_size &gt; cap)</span></a>
 <a name="295"><span class="lineNum">     295 </span>                :            :       {</a>
 <a name="296"><span class="lineNum">     296 </span>                :            :          // Allocate a new buffer and copy everything over:</a>
 <a name="297"><span class="lineNum">     297 </span>                :<span class="lineNoCov">          0 :          cap             = (std::min)((std::max)(cap * 4, new_size), max_limbs);</span></a>
@@ -385,9 +385,9 @@
 <a name="307"><span class="lineNum">     307 </span>                :            :       }</a>
 <a name="308"><span class="lineNum">     308 </span>                :            :       else</a>
 <a name="309"><span class="lineNum">     309 </span>                :            :       {</a>
-<a name="310"><span class="lineNum">     310 </span>                :<span class="lineCov">          2 :          m_limbs = new_size;</span></a>
+<a name="310"><span class="lineNum">     310 </span>                :<span class="lineNoCov">          0 :          m_limbs = new_size;</span></a>
 <a name="311"><span class="lineNum">     311 </span>                :            :       }</a>
-<a name="312"><span class="lineNum">     312 </span>                :<span class="lineCov">          2 :    }</span></a>
+<a name="312"><span class="lineNum">     312 </span>                :<span class="lineNoCov">          0 :    }</span></a>
 <a name="313"><span class="lineNum">     313 </span>                :            :    BOOST_MP_FORCEINLINE void normalize() BOOST_NOEXCEPT</a>
 <a name="314"><span class="lineNum">     314 </span>                :            :    {</a>
 <a name="315"><span class="lineNum">     315 </span>                :            :       limb_pointer p = limbs();</a>
@@ -395,12 +395,12 @@
 <a name="317"><span class="lineNum">     317 </span>                :            :          --m_limbs;</a>
 <a name="318"><span class="lineNum">     318 </span>                :            :    }</a>
 <a name="319"><span class="lineNum">     319 </span>                :            :    BOOST_MP_FORCEINLINE BOOST_CONSTEXPR cpp_int_base() BOOST_NOEXCEPT : m_data(), m_limbs(1), m_sign(false), m_internal(true) {}</a>
-<a name="320"><span class="lineNum">     320 </span>                :<span class="lineCov">          2 :    BOOST_MP_FORCEINLINE                 cpp_int_base(const cpp_int_base&amp; o) : base_type(o), m_limbs(0), m_internal(true)</span></a>
+<a name="320"><span class="lineNum">     320 </span>                :<span class="lineNoCov">          0 :    BOOST_MP_FORCEINLINE                 cpp_int_base(const cpp_int_base&amp; o) : base_type(o), m_limbs(0), m_internal(true)</span></a>
 <a name="321"><span class="lineNum">     321 </span>                :            :    {</a>
-<a name="322"><span class="lineNum">     322 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :       resize(o.size(), o.size());</span></a>
-<a name="323"><span class="lineNum">     323 </span>                :<span class="lineCov">          2 :       std::memcpy(limbs(), o.limbs(), o.size() * sizeof(limbs()[0]));</span></a>
-<a name="324"><span class="lineNum">     324 </span>                :<span class="lineCov">          2 :       m_sign = o.m_sign;</span></a>
-<a name="325"><span class="lineNum">     325 </span>                :<span class="lineCov">          2 :    }</span></a>
+<a name="322"><span class="lineNum">     322 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       resize(o.size(), o.size());</span></a>
+<a name="323"><span class="lineNum">     323 </span>                :<span class="lineNoCov">          0 :       std::memcpy(limbs(), o.limbs(), o.size() * sizeof(limbs()[0]));</span></a>
+<a name="324"><span class="lineNum">     324 </span>                :<span class="lineNoCov">          0 :       m_sign = o.m_sign;</span></a>
+<a name="325"><span class="lineNum">     325 </span>                :<span class="lineNoCov">          0 :    }</span></a>
 <a name="326"><span class="lineNum">     326 </span>                :            : #ifndef BOOST_NO_CXX11_RVALUE_REFERENCES</a>
 <a name="327"><span class="lineNum">     327 </span>                :            :    cpp_int_base(cpp_int_base&amp;&amp; o)</a>
 <a name="328"><span class="lineNum">     328 </span>                :            :        : base_type(static_cast&lt;base_type&amp;&amp;&gt;(o)), m_limbs(o.m_limbs), m_sign(o.m_sign), m_internal(o.m_internal)</a>
@@ -437,11 +437,11 @@
 <a name="359"><span class="lineNum">     359 </span>                :            :       return *this;</a>
 <a name="360"><span class="lineNum">     360 </span>                :            :    }</a>
 <a name="361"><span class="lineNum">     361 </span>                :            : #endif</a>
-<a name="362"><span class="lineNum">     362 </span>                :<span class="lineCov">          4 :    BOOST_MP_FORCEINLINE ~cpp_int_base() BOOST_NOEXCEPT</span></a>
+<a name="362"><span class="lineNum">     362 </span>                :<span class="lineNoCov">          0 :    BOOST_MP_FORCEINLINE ~cpp_int_base() BOOST_NOEXCEPT</span></a>
 <a name="363"><span class="lineNum">     363 </span>                :            :    {</a>
-<a name="364"><span class="lineNum">     364 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span>]:<span class="lineCov">          4 :       if (!m_internal)</span></a>
+<a name="364"><span class="lineNum">     364 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       if (!m_internal)</span></a>
 <a name="365"><span class="lineNum">     365 </span>                :<span class="lineNoCov">          0 :          allocator().deallocate(limbs(), capacity());</span></a>
-<a name="366"><span class="lineNum">     366 </span>                :<span class="lineCov">          4 :    }</span></a>
+<a name="366"><span class="lineNum">     366 </span>                :<span class="lineNoCov">          0 :    }</span></a>
 <a name="367"><span class="lineNum">     367 </span>                :            :    void assign(const cpp_int_base&amp; o)</a>
 <a name="368"><span class="lineNum">     368 </span>                :            :    {</a>
 <a name="369"><span class="lineNum">     369 </span>                :            :       if (this != &amp;o)</a>
@@ -1315,7 +1315,7 @@
 <a name="1237"><span class="lineNum">    1237 </span>                :            :    typedef mpl::int_&lt;Checked&gt;         checked_type;</a>
 <a name="1238"><span class="lineNum">    1238 </span>                :            : </a>
 <a name="1239"><span class="lineNum">    1239 </span>                :            :    BOOST_MP_FORCEINLINE BOOST_CONSTEXPR cpp_int_backend() BOOST_NOEXCEPT {}</a>
-<a name="1240"><span class="lineNum">    1240 </span>                :<span class="lineCov">          2 :    BOOST_MP_FORCEINLINE BOOST_CONSTEXPR cpp_int_backend(const cpp_int_backend&amp; o) BOOST_MP_NOEXCEPT_IF(boost::is_void&lt;Allocator&gt;::value) : base_type(o) {}</span></a>
+<a name="1240"><span class="lineNum">    1240 </span>                :<span class="lineNoCov">          0 :    BOOST_MP_FORCEINLINE BOOST_CONSTEXPR cpp_int_backend(const cpp_int_backend&amp; o) BOOST_MP_NOEXCEPT_IF(boost::is_void&lt;Allocator&gt;::value) : base_type(o) {}</span></a>
 <a name="1241"><span class="lineNum">    1241 </span>                :            : #ifndef BOOST_NO_CXX11_RVALUE_REFERENCES</a>
 <a name="1242"><span class="lineNum">    1242 </span>                :            :    BOOST_MP_FORCEINLINE BOOST_CONSTEXPR cpp_int_backend(cpp_int_backend&amp;&amp; o) BOOST_NOEXCEPT</a>
 <a name="1243"><span class="lineNum">    1243 </span>                :            :        : base_type(static_cast&lt;base_type&amp;&amp;&gt;(o))</a>
@@ -1325,8 +1325,8 @@
 <a name="1247"><span class="lineNum">    1247 </span>                :            :    // Direct construction from arithmetic type:</a>
 <a name="1248"><span class="lineNum">    1248 </span>                :            :    //</a>
 <a name="1249"><span class="lineNum">    1249 </span>                :            :    template &lt;class Arg&gt;</a>
-<a name="1250"><span class="lineNum">    1250 </span>                :<span class="lineCov">          2 :    BOOST_MP_FORCEINLINE BOOST_CONSTEXPR cpp_int_backend(Arg i, typename boost::enable_if_c&lt;is_allowed_cpp_int_base_conversion&lt;Arg, base_type&gt;::value&gt;::type const* = 0) BOOST_MP_NOEXCEPT_IF(noexcept(base_type(std::declval&lt;Arg&gt;())))</span></a>
-<a name="1251"><span class="lineNum">    1251 </span>                :<span class="lineCov">          2 :        : base_type(i) {}</span></a>
+<a name="1250"><span class="lineNum">    1250 </span>                :<span class="lineNoCov">          0 :    BOOST_MP_FORCEINLINE BOOST_CONSTEXPR cpp_int_backend(Arg i, typename boost::enable_if_c&lt;is_allowed_cpp_int_base_conversion&lt;Arg, base_type&gt;::value&gt;::type const* = 0) BOOST_MP_NOEXCEPT_IF(noexcept(base_type(std::declval&lt;Arg&gt;())))</span></a>
+<a name="1251"><span class="lineNum">    1251 </span>                :<span class="lineNoCov">          0 :        : base_type(i) {}</span></a>
 <a name="1252"><span class="lineNum">    1252 </span>                :            : </a>
 <a name="1253"><span class="lineNum">    1253 </span>                :            :  private:</a>
 <a name="1254"><span class="lineNum">    1254 </span>                :            :    template &lt;unsigned MinBits2, unsigned MaxBits2, cpp_integer_type SignType2, cpp_int_check_type Checked2, class Allocator2&gt;</a>

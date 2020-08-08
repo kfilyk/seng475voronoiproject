@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/jdoe/Desktop/project/app/test_voronoi.cpp" "/home/jdoe/Desktop/project/bin/CMakeFiles/test_voronoi.dir/app/test_voronoi.cpp.o"
+  "/home/jdoe/Desktop/project/app/tests/test_voronoi.cpp" "/home/jdoe/Desktop/project/bin/CMakeFiles/test_voronoi.dir/app/tests/test_voronoi.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

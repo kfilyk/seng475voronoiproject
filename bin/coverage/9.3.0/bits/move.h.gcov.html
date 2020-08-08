@@ -37,12 +37,12 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2020-07-07 20:06:46</td>
+            <td class="headerValue">2020-08-08 14:09:33</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">123</td>
+            <td class="headerCovTableEntry">146</td>
             <td class="headerCovTableEntry">420</td>
-            <td class="headerCovTableEntryLo">29.3 %</td>
+            <td class="headerCovTableEntryLo">34.8 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -122,8 +122,8 @@
 <a name="44"><span class="lineNum">      44 </span>                :            :    */</a>
 <a name="45"><span class="lineNum">      45 </span>                :            :   template&lt;typename _Tp&gt;</a>
 <a name="46"><span class="lineNum">      46 </span>                :            :     inline _GLIBCXX_CONSTEXPR _Tp*</a>
-<a name="47"><span class="lineNum">      47 </span>                :<span class="lineCov">       7179 :     __addressof(_Tp&amp; __r) _GLIBCXX_NOEXCEPT</span></a>
-<a name="48"><span class="lineNum">      48 </span>                :<span class="lineCov">       7179 :     { return __builtin_addressof(__r); }</span></a>
+<a name="47"><span class="lineNum">      47 </span>                :<span class="lineCov">       7508 :     __addressof(_Tp&amp; __r) _GLIBCXX_NOEXCEPT</span></a>
+<a name="48"><span class="lineNum">      48 </span>                :<span class="lineCov">       7508 :     { return __builtin_addressof(__r); }</span></a>
 <a name="49"><span class="lineNum">      49 </span>                :            : </a>
 <a name="50"><span class="lineNum">      50 </span>                :            : #if __cplusplus &gt;= 201103L</a>
 <a name="51"><span class="lineNum">      51 </span>                :            : </a>
@@ -149,8 +149,8 @@
 <a name="71"><span class="lineNum">      71 </span>                :            :    */</a>
 <a name="72"><span class="lineNum">      72 </span>                :            :   template&lt;typename _Tp&gt;</a>
 <a name="73"><span class="lineNum">      73 </span>                :            :     constexpr _Tp&amp;&amp;</a>
-<a name="74"><span class="lineNum">      74 </span>                :<span class="lineCov">       4359 :     forward(typename std::remove_reference&lt;_Tp&gt;::type&amp; __t) noexcept</span></a>
-<a name="75"><span class="lineNum">      75 </span>                :<span class="lineCov">       4359 :     { return static_cast&lt;_Tp&amp;&amp;&gt;(__t); }</span></a>
+<a name="74"><span class="lineNum">      74 </span>                :<span class="lineCov">       4567 :     forward(typename std::remove_reference&lt;_Tp&gt;::type&amp; __t) noexcept</span></a>
+<a name="75"><span class="lineNum">      75 </span>                :<span class="lineCov">       4567 :     { return static_cast&lt;_Tp&amp;&amp;&gt;(__t); }</span></a>
 <a name="76"><span class="lineNum">      76 </span>                :            : </a>
 <a name="77"><span class="lineNum">      77 </span>                :            :   /**</a>
 <a name="78"><span class="lineNum">      78 </span>                :            :    *  @brief  Forward an rvalue.</a>
@@ -174,8 +174,8 @@
 <a name="96"><span class="lineNum">      96 </span>                :            :   */</a>
 <a name="97"><span class="lineNum">      97 </span>                :            :   template&lt;typename _Tp&gt;</a>
 <a name="98"><span class="lineNum">      98 </span>                :            :     constexpr typename std::remove_reference&lt;_Tp&gt;::type&amp;&amp;</a>
-<a name="99"><span class="lineNum">      99 </span>                :<span class="lineCov">       1838 :     move(_Tp&amp;&amp; __t) noexcept</span></a>
-<a name="100"><span class="lineNum">     100 </span>                :<span class="lineCov">       1838 :     { return static_cast&lt;typename std::remove_reference&lt;_Tp&gt;::type&amp;&amp;&gt;(__t); }</span></a>
+<a name="99"><span class="lineNum">      99 </span>                :<span class="lineCov">       1846 :     move(_Tp&amp;&amp; __t) noexcept</span></a>
+<a name="100"><span class="lineNum">     100 </span>                :<span class="lineCov">       1846 :     { return static_cast&lt;typename std::remove_reference&lt;_Tp&gt;::type&amp;&amp;&gt;(__t); }</span></a>
 <a name="101"><span class="lineNum">     101 </span>                :            : </a>
 <a name="102"><span class="lineNum">     102 </span>                :            : </a>
 <a name="103"><span class="lineNum">     103 </span>                :            :   template&lt;typename _Tp&gt;</a>

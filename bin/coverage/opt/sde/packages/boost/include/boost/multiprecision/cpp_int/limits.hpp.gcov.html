@@ -31,18 +31,18 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">17</td>
-            <td class="headerCovTableEntry">17</td>
-            <td class="headerCovTableEntryHi">100.0 %</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2020-07-07 20:06:46</td>
+            <td class="headerValue">2020-08-08 14:09:33</td>
             <td></td>
             <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">6</td>
-            <td class="headerCovTableEntry">6</td>
-            <td class="headerCovTableEntryHi">100.0 %</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">6</td>
+            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">12</td>
-            <td class="headerCovTableEntryLo">50.0 %</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
           </tr>
           <tr><td><img src="../../../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -147,12 +147,12 @@
 <a name="69"><span class="lineNum">      69 </span>                :            : </a>
 <a name="70"><span class="lineNum">      70 </span>                :            : template &lt;unsigned MinBits, unsigned MaxBits, boost::multiprecision::cpp_integer_type SignType, boost::multiprecision::cpp_int_check_type Checked, class Allocator, boost::multiprecision::expression_template_option ExpressionTemplates, bool has_allocator&gt;</a>
 <a name="71"><span class="lineNum">      71 </span>                :            : inline boost::multiprecision::number&lt;boost::multiprecision::cpp_int_backend&lt;MinBits, MaxBits, SignType, Checked, Allocator&gt;, ExpressionTemplates&gt;</a>
-<a name="72"><span class="lineNum">      72 </span>                :<span class="lineCov">          1 : get_min(const boost::mpl::false_&amp;, const boost::mpl::true_&amp;, const boost::mpl::bool_&lt;has_allocator&gt;&amp;)</span></a>
+<a name="72"><span class="lineNum">      72 </span>                :<span class="lineNoCov">          0 : get_min(const boost::mpl::false_&amp;, const boost::mpl::true_&amp;, const boost::mpl::bool_&lt;has_allocator&gt;&amp;)</span></a>
 <a name="73"><span class="lineNum">      73 </span>                :            : {</a>
 <a name="74"><span class="lineNum">      74 </span>                :            :    // Unbounded and signed, never constexpr because there must be an allocator.</a>
 <a name="75"><span class="lineNum">      75 </span>                :            :    // There is no minimum value, just return 0:</a>
-<a name="76"><span class="lineNum">      76 </span>  [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          1 :    static const boost::multiprecision::number&lt;boost::multiprecision::cpp_int_backend&lt;MinBits, MaxBits, SignType, Checked, Allocator&gt;, ExpressionTemplates&gt; val(0u);</span></a>
-<a name="77"><span class="lineNum">      77 </span>                :<span class="lineCov">          1 :    return val;</span></a>
+<a name="76"><span class="lineNum">      76 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :    static const boost::multiprecision::number&lt;boost::multiprecision::cpp_int_backend&lt;MinBits, MaxBits, SignType, Checked, Allocator&gt;, ExpressionTemplates&gt; val(0u);</span></a>
+<a name="77"><span class="lineNum">      77 </span>                :<span class="lineNoCov">          0 :    return val;</span></a>
 <a name="78"><span class="lineNum">      78 </span>                :            : }</a>
 <a name="79"><span class="lineNum">      79 </span>                :            : </a>
 <a name="80"><span class="lineNum">      80 </span>                :            : template &lt;unsigned MinBits, unsigned MaxBits, boost::multiprecision::cpp_integer_type SignType, boost::multiprecision::cpp_int_check_type Checked, class Allocator, boost::multiprecision::expression_template_option ExpressionTemplates, bool has_allocator&gt;</a>
@@ -220,12 +220,12 @@
 <a name="142"><span class="lineNum">     142 </span>                :            : </a>
 <a name="143"><span class="lineNum">     143 </span>                :            : template &lt;unsigned MinBits, unsigned MaxBits, boost::multiprecision::cpp_integer_type SignType, boost::multiprecision::cpp_int_check_type Checked, class Allocator, boost::multiprecision::expression_template_option ExpressionTemplates, bool has_allocator&gt;</a>
 <a name="144"><span class="lineNum">     144 </span>                :            : inline boost::multiprecision::number&lt;boost::multiprecision::cpp_int_backend&lt;MinBits, MaxBits, SignType, Checked, Allocator&gt;, ExpressionTemplates&gt;</a>
-<a name="145"><span class="lineNum">     145 </span>                :<span class="lineCov">          1 : get_max(const boost::mpl::false_&amp;, const boost::mpl::true_&amp;, const boost::mpl::bool_&lt;has_allocator&gt;&amp;)</span></a>
+<a name="145"><span class="lineNum">     145 </span>                :<span class="lineNoCov">          0 : get_max(const boost::mpl::false_&amp;, const boost::mpl::true_&amp;, const boost::mpl::bool_&lt;has_allocator&gt;&amp;)</span></a>
 <a name="146"><span class="lineNum">     146 </span>                :            : {</a>
 <a name="147"><span class="lineNum">     147 </span>                :            :    // Unbounded and signed.</a>
 <a name="148"><span class="lineNum">     148 </span>                :            :    // There is no maximum value, just return 0:</a>
-<a name="149"><span class="lineNum">     149 </span>  [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          1 :    static const boost::multiprecision::number&lt;boost::multiprecision::cpp_int_backend&lt;MinBits, MaxBits, SignType, Checked, Allocator&gt;, ExpressionTemplates&gt; val(0u);</span></a>
-<a name="150"><span class="lineNum">     150 </span>                :<span class="lineCov">          1 :    return val;</span></a>
+<a name="149"><span class="lineNum">     149 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :    static const boost::multiprecision::number&lt;boost::multiprecision::cpp_int_backend&lt;MinBits, MaxBits, SignType, Checked, Allocator&gt;, ExpressionTemplates&gt; val(0u);</span></a>
+<a name="150"><span class="lineNum">     150 </span>                :<span class="lineNoCov">          0 :    return val;</span></a>
 <a name="151"><span class="lineNum">     151 </span>                :            : }</a>
 <a name="152"><span class="lineNum">     152 </span>                :            : </a>
 <a name="153"><span class="lineNum">     153 </span>                :            : template &lt;unsigned MinBits, unsigned MaxBits, boost::multiprecision::cpp_integer_type SignType, boost::multiprecision::cpp_int_check_type Checked, class Allocator, boost::multiprecision::expression_template_option ExpressionTemplates, bool has_allocator&gt;</a>
@@ -247,12 +247,12 @@
 <a name="169"><span class="lineNum">     169 </span>                :            : </a>
 <a name="170"><span class="lineNum">     170 </span>                :            :    struct inititializer</a>
 <a name="171"><span class="lineNum">     171 </span>                :            :    {</a>
-<a name="172"><span class="lineNum">     172 </span>                :<span class="lineCov">          1 :       BOOST_CXX14_CONSTEXPR_IF_DETECTION inititializer()</span></a>
+<a name="172"><span class="lineNum">     172 </span>                :<span class="lineNoCov">          0 :       BOOST_CXX14_CONSTEXPR_IF_DETECTION inititializer()</span></a>
 <a name="173"><span class="lineNum">     173 </span>                :            :       {</a>
-<a name="174"><span class="lineNum">     174 </span>                :<span class="lineCov">          1 :          (std::numeric_limits&lt;number_type&gt;::max)();</span></a>
-<a name="175"><span class="lineNum">     175 </span>                :<span class="lineCov">          1 :          (std::numeric_limits&lt;number_type&gt;::min)();</span></a>
-<a name="176"><span class="lineNum">     176 </span>                :<span class="lineCov">          1 :       }</span></a>
-<a name="177"><span class="lineNum">     177 </span>                :<span class="lineCov">          2 :       BOOST_CXX14_CONSTEXPR_IF_DETECTION void do_nothing() const {}</span></a>
+<a name="174"><span class="lineNum">     174 </span>                :<span class="lineNoCov">          0 :          (std::numeric_limits&lt;number_type&gt;::max)();</span></a>
+<a name="175"><span class="lineNum">     175 </span>                :<span class="lineNoCov">          0 :          (std::numeric_limits&lt;number_type&gt;::min)();</span></a>
+<a name="176"><span class="lineNum">     176 </span>                :<span class="lineNoCov">          0 :       }</span></a>
+<a name="177"><span class="lineNum">     177 </span>                :<span class="lineNoCov">          0 :       BOOST_CXX14_CONSTEXPR_IF_DETECTION void do_nothing() const {}</span></a>
 <a name="178"><span class="lineNum">     178 </span>                :            :    };</a>
 <a name="179"><span class="lineNum">     179 </span>                :            : </a>
 <a name="180"><span class="lineNum">     180 </span>                :            :    static const inititializer init;</a>
@@ -263,15 +263,15 @@
 <a name="185"><span class="lineNum">     185 </span>                :            :    // Largest and smallest numbers are bounded only by available memory, set</a>
 <a name="186"><span class="lineNum">     186 </span>                :            :    // to zero:</a>
 <a name="187"><span class="lineNum">     187 </span>                :            :    //</a>
-<a name="188"><span class="lineNum">     188 </span>                :<span class="lineCov">          1 :    static BOOST_CXX14_CONSTEXPR_IF_DETECTION number_type(min)()</span></a>
+<a name="188"><span class="lineNum">     188 </span>                :<span class="lineNoCov">          0 :    static BOOST_CXX14_CONSTEXPR_IF_DETECTION number_type(min)()</span></a>
 <a name="189"><span class="lineNum">     189 </span>                :            :    {</a>
-<a name="190"><span class="lineNum">     190 </span>                :<span class="lineCov">          1 :       init.do_nothing();</span></a>
-<a name="191"><span class="lineNum">     191 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          1 :       return detail::get_min&lt;MinBits, MaxBits, SignType, Checked, Allocator, ExpressionTemplates&gt;(boost::multiprecision::backends::is_fixed_precision&lt;backend_type&gt;(), boost::multiprecision::is_signed_number&lt;backend_type&gt;(), boost::mpl::bool_&lt;boost::is_void&lt;Allocator&gt;::value&gt;());</span></a>
+<a name="190"><span class="lineNum">     190 </span>                :<span class="lineNoCov">          0 :       init.do_nothing();</span></a>
+<a name="191"><span class="lineNum">     191 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       return detail::get_min&lt;MinBits, MaxBits, SignType, Checked, Allocator, ExpressionTemplates&gt;(boost::multiprecision::backends::is_fixed_precision&lt;backend_type&gt;(), boost::multiprecision::is_signed_number&lt;backend_type&gt;(), boost::mpl::bool_&lt;boost::is_void&lt;Allocator&gt;::value&gt;());</span></a>
 <a name="192"><span class="lineNum">     192 </span>                :            :    }</a>
-<a name="193"><span class="lineNum">     193 </span>                :<span class="lineCov">          1 :    static BOOST_CXX14_CONSTEXPR_IF_DETECTION number_type(max)()</span></a>
+<a name="193"><span class="lineNum">     193 </span>                :<span class="lineNoCov">          0 :    static BOOST_CXX14_CONSTEXPR_IF_DETECTION number_type(max)()</span></a>
 <a name="194"><span class="lineNum">     194 </span>                :            :    {</a>
-<a name="195"><span class="lineNum">     195 </span>                :<span class="lineCov">          1 :       init.do_nothing();</span></a>
-<a name="196"><span class="lineNum">     196 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          1 :       return detail::get_max&lt;MinBits, MaxBits, SignType, Checked, Allocator, ExpressionTemplates&gt;(boost::multiprecision::backends::is_fixed_precision&lt;backend_type&gt;(), boost::multiprecision::is_signed_number&lt;backend_type&gt;(), boost::mpl::bool_&lt;boost::is_void&lt;Allocator&gt;::value&gt;());</span></a>
+<a name="195"><span class="lineNum">     195 </span>                :<span class="lineNoCov">          0 :       init.do_nothing();</span></a>
+<a name="196"><span class="lineNum">     196 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       return detail::get_max&lt;MinBits, MaxBits, SignType, Checked, Allocator, ExpressionTemplates&gt;(boost::multiprecision::backends::is_fixed_precision&lt;backend_type&gt;(), boost::multiprecision::is_signed_number&lt;backend_type&gt;(), boost::mpl::bool_&lt;boost::is_void&lt;Allocator&gt;::value&gt;());</span></a>
 <a name="197"><span class="lineNum">     197 </span>                :            :    }</a>
 <a name="198"><span class="lineNum">     198 </span>                :            :    static BOOST_CXX14_CONSTEXPR_IF_DETECTION number_type          lowest() { return (min)(); }</a>
 <a name="199"><span class="lineNum">     199 </span>                :            :    BOOST_STATIC_CONSTEXPR int  digits       = boost::multiprecision::backends::max_precision&lt;backend_type&gt;::value == UINT_MAX ? INT_MAX : boost::multiprecision::backends::max_precision&lt;backend_type&gt;::value;</a>
