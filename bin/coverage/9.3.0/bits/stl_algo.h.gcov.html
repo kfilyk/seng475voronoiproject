@@ -31,18 +31,18 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">46</td>
+            <td class="headerCovTableEntry">4</td>
             <td class="headerCovTableEntry">205</td>
-            <td class="headerCovTableEntryLo">22.4 %</td>
+            <td class="headerCovTableEntryLo">2.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2020-07-07 12:01:38</td>
+            <td class="headerValue">2020-08-08 14:09:33</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">13</td>
+            <td class="headerCovTableEntry">2</td>
             <td class="headerCovTableEntry">77</td>
-            <td class="headerCovTableEntryLo">16.9 %</td>
+            <td class="headerCovTableEntryLo">2.6 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">13</td>
+            <td class="headerCovTableEntry">2</td>
             <td class="headerCovTableEntry">136</td>
-            <td class="headerCovTableEntryLo">9.6 %</td>
+            <td class="headerCovTableEntryLo">1.5 %</td>
           </tr>
           <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -187,13 +187,13 @@
 <a name="109"><span class="lineNum">     109 </span>                :            :   /// This is an overload used by find algos for the RAI case.</a>
 <a name="110"><span class="lineNum">     110 </span>                :            :   template&lt;typename _RandomAccessIterator, typename _Predicate&gt;</a>
 <a name="111"><span class="lineNum">     111 </span>                :            :     _RandomAccessIterator</a>
-<a name="112"><span class="lineNum">     112 </span>                :<span class="lineCov">          1 :     __find_if(_RandomAccessIterator __first, _RandomAccessIterator __last,</span></a>
+<a name="112"><span class="lineNum">     112 </span>                :<span class="lineNoCov">          0 :     __find_if(_RandomAccessIterator __first, _RandomAccessIterator __last,</span></a>
 <a name="113"><span class="lineNum">     113 </span>                :            :               _Predicate __pred, random_access_iterator_tag)</a>
 <a name="114"><span class="lineNum">     114 </span>                :            :     {</a>
 <a name="115"><span class="lineNum">     115 </span>                :            :       typename iterator_traits&lt;_RandomAccessIterator&gt;::difference_type</a>
-<a name="116"><span class="lineNum">     116 </span>                :<span class="lineCov">          1 :         __trip_count = (__last - __first) &gt;&gt; 2;</span></a>
+<a name="116"><span class="lineNum">     116 </span>                :<span class="lineNoCov">          0 :         __trip_count = (__last - __first) &gt;&gt; 2;</span></a>
 <a name="117"><span class="lineNum">     117 </span>                :            : </a>
-<a name="118"><span class="lineNum">     118 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          1 :       for (; __trip_count &gt; 0; --__trip_count)</span></a>
+<a name="118"><span class="lineNum">     118 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       for (; __trip_count &gt; 0; --__trip_count)</span></a>
 <a name="119"><span class="lineNum">     119 </span>                :            :         {</a>
 <a name="120"><span class="lineNum">     120 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :           if (__pred(__first))</span></a>
 <a name="121"><span class="lineNum">     121 </span>                :<span class="lineNoCov">          0 :             return __first;</span></a>
@@ -212,7 +212,7 @@
 <a name="134"><span class="lineNum">     134 </span>                :<span class="lineNoCov">          0 :           ++__first;</span></a>
 <a name="135"><span class="lineNum">     135 </span>                :            :         }</a>
 <a name="136"><span class="lineNum">     136 </span>                :            : </a>
-<a name="137"><span class="lineNum">     137 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 1 time"> + </span>]:<span class="lineCov">          1 :       switch (__last - __first)</span></a>
+<a name="137"><span class="lineNum">     137 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :       switch (__last - __first)</span></a>
 <a name="138"><span class="lineNum">     138 </span>                :            :         {</a>
 <a name="139"><span class="lineNum">     139 </span>                :<span class="lineNoCov">          0 :         case 3:</span></a>
 <a name="140"><span class="lineNum">     140 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :           if (__pred(__first))</span></a>
@@ -226,18 +226,18 @@
 <a name="148"><span class="lineNum">     148 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :           if (__pred(__first))</span></a>
 <a name="149"><span class="lineNum">     149 </span>                :<span class="lineNoCov">          0 :             return __first;</span></a>
 <a name="150"><span class="lineNum">     150 </span>                :<span class="lineNoCov">          0 :           ++__first;</span></a>
-<a name="151"><span class="lineNum">     151 </span>                :<span class="lineCov">          1 :         case 0:</span></a>
+<a name="151"><span class="lineNum">     151 </span>                :<span class="lineNoCov">          0 :         case 0:</span></a>
 <a name="152"><span class="lineNum">     152 </span>                :            :         default:</a>
-<a name="153"><span class="lineNum">     153 </span>                :<span class="lineCov">          1 :           return __last;</span></a>
+<a name="153"><span class="lineNum">     153 </span>                :<span class="lineNoCov">          0 :           return __last;</span></a>
 <a name="154"><span class="lineNum">     154 </span>                :            :         }</a>
 <a name="155"><span class="lineNum">     155 </span>                :            :     }</a>
 <a name="156"><span class="lineNum">     156 </span>                :            : </a>
 <a name="157"><span class="lineNum">     157 </span>                :            :   template&lt;typename _Iterator, typename _Predicate&gt;</a>
 <a name="158"><span class="lineNum">     158 </span>                :            :     inline _Iterator</a>
-<a name="159"><span class="lineNum">     159 </span>                :<span class="lineCov">          1 :     __find_if(_Iterator __first, _Iterator __last, _Predicate __pred)</span></a>
+<a name="159"><span class="lineNum">     159 </span>                :<span class="lineNoCov">          0 :     __find_if(_Iterator __first, _Iterator __last, _Predicate __pred)</span></a>
 <a name="160"><span class="lineNum">     160 </span>                :            :     {</a>
-<a name="161"><span class="lineNum">     161 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineCov">          1 :       return __find_if(__first, __last, __pred,</span></a>
-<a name="162"><span class="lineNum">     162 </span>                :<span class="lineCov">          2 :                        std::__iterator_category(__first));</span></a>
+<a name="161"><span class="lineNum">     161 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       return __find_if(__first, __last, __pred,</span></a>
+<a name="162"><span class="lineNum">     162 </span>                :<span class="lineNoCov">          0 :                        std::__iterator_category(__first));</span></a>
 <a name="163"><span class="lineNum">     163 </span>                :            :     }</a>
 <a name="164"><span class="lineNum">     164 </span>                :            : </a>
 <a name="165"><span class="lineNum">     165 </span>                :            :   /// Provided for stable_partition to use.</a>
@@ -1020,30 +1020,30 @@
 <a name="942"><span class="lineNum">     942 </span>                :            : </a>
 <a name="943"><span class="lineNum">     943 </span>                :            :   template&lt;typename _ForwardIterator, typename _BinaryPredicate&gt;</a>
 <a name="944"><span class="lineNum">     944 </span>                :            :     _ForwardIterator</a>
-<a name="945"><span class="lineNum">     945 </span>                :<span class="lineCov">          1 :     __adjacent_find(_ForwardIterator __first, _ForwardIterator __last,</span></a>
+<a name="945"><span class="lineNum">     945 </span>                :<span class="lineNoCov">          0 :     __adjacent_find(_ForwardIterator __first, _ForwardIterator __last,</span></a>
 <a name="946"><span class="lineNum">     946 </span>                :            :                     _BinaryPredicate __binary_pred)</a>
 <a name="947"><span class="lineNum">     947 </span>                :            :     {</a>
-<a name="948"><span class="lineNum">     948 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          1 :       if (__first == __last)</span></a>
+<a name="948"><span class="lineNum">     948 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       if (__first == __last)</span></a>
 <a name="949"><span class="lineNum">     949 </span>                :<span class="lineNoCov">          0 :         return __last;</span></a>
-<a name="950"><span class="lineNum">     950 </span>                :<span class="lineCov">          1 :       _ForwardIterator __next = __first;</span></a>
-<a name="951"><span class="lineNum">     951 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          1 :       while (++__next != __last)</span></a>
+<a name="950"><span class="lineNum">     950 </span>                :<span class="lineNoCov">          0 :       _ForwardIterator __next = __first;</span></a>
+<a name="951"><span class="lineNum">     951 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       while (++__next != __last)</span></a>
 <a name="952"><span class="lineNum">     952 </span>                :            :         {</a>
 <a name="953"><span class="lineNum">     953 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :           if (__binary_pred(__first, __next))</span></a>
 <a name="954"><span class="lineNum">     954 </span>                :<span class="lineNoCov">          0 :             return __first;</span></a>
 <a name="955"><span class="lineNum">     955 </span>                :<span class="lineNoCov">          0 :           __first = __next;</span></a>
 <a name="956"><span class="lineNum">     956 </span>                :            :         }</a>
-<a name="957"><span class="lineNum">     957 </span>                :<span class="lineCov">          1 :       return __last;</span></a>
+<a name="957"><span class="lineNum">     957 </span>                :<span class="lineNoCov">          0 :       return __last;</span></a>
 <a name="958"><span class="lineNum">     958 </span>                :            :     }</a>
 <a name="959"><span class="lineNum">     959 </span>                :            : </a>
 <a name="960"><span class="lineNum">     960 </span>                :            :   template&lt;typename _ForwardIterator, typename _BinaryPredicate&gt;</a>
 <a name="961"><span class="lineNum">     961 </span>                :            :     _ForwardIterator</a>
-<a name="962"><span class="lineNum">     962 </span>                :<span class="lineCov">          1 :     __unique(_ForwardIterator __first, _ForwardIterator __last,</span></a>
+<a name="962"><span class="lineNum">     962 </span>                :<span class="lineNoCov">          0 :     __unique(_ForwardIterator __first, _ForwardIterator __last,</span></a>
 <a name="963"><span class="lineNum">     963 </span>                :            :              _BinaryPredicate __binary_pred)</a>
 <a name="964"><span class="lineNum">     964 </span>                :            :     {</a>
 <a name="965"><span class="lineNum">     965 </span>                :            :       // Skip the beginning, if already unique.</a>
-<a name="966"><span class="lineNum">     966 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          1 :       __first = std::__adjacent_find(__first, __last, __binary_pred);</span></a>
-<a name="967"><span class="lineNum">     967 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          1 :       if (__first == __last)</span></a>
-<a name="968"><span class="lineNum">     968 </span>                :<span class="lineCov">          1 :         return __last;</span></a>
+<a name="966"><span class="lineNum">     966 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       __first = std::__adjacent_find(__first, __last, __binary_pred);</span></a>
+<a name="967"><span class="lineNum">     967 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       if (__first == __last)</span></a>
+<a name="968"><span class="lineNum">     968 </span>                :<span class="lineNoCov">          0 :         return __last;</span></a>
 <a name="969"><span class="lineNum">     969 </span>                :            : </a>
 <a name="970"><span class="lineNum">     970 </span>                :            :       // Do the real copy work.</a>
 <a name="971"><span class="lineNum">     971 </span>                :<span class="lineNoCov">          0 :       _ForwardIterator __dest = __first;</span></a>
@@ -1070,7 +1070,7 @@
 <a name="992"><span class="lineNum">     992 </span>                :            :   */</a>
 <a name="993"><span class="lineNum">     993 </span>                :            :   template&lt;typename _ForwardIterator&gt;</a>
 <a name="994"><span class="lineNum">     994 </span>                :            :     inline _ForwardIterator</a>
-<a name="995"><span class="lineNum">     995 </span>                :<span class="lineCov">          1 :     unique(_ForwardIterator __first, _ForwardIterator __last)</span></a>
+<a name="995"><span class="lineNum">     995 </span>                :<span class="lineNoCov">          0 :     unique(_ForwardIterator __first, _ForwardIterator __last)</span></a>
 <a name="996"><span class="lineNum">     996 </span>                :            :     {</a>
 <a name="997"><span class="lineNum">     997 </span>                :            :       // concept requirements</a>
 <a name="998"><span class="lineNum">     998 </span>                :            :       __glibcxx_function_requires(_Mutable_ForwardIteratorConcept&lt;</a>
@@ -1079,8 +1079,8 @@
 <a name="1001"><span class="lineNum">    1001 </span>                :            :                      typename iterator_traits&lt;_ForwardIterator&gt;::value_type&gt;)</a>
 <a name="1002"><span class="lineNum">    1002 </span>                :            :       __glibcxx_requires_valid_range(__first, __last);</a>
 <a name="1003"><span class="lineNum">    1003 </span>                :            : </a>
-<a name="1004"><span class="lineNum">    1004 </span>                :<span class="lineCov">          1 :       return std::__unique(__first, __last,</span></a>
-<a name="1005"><span class="lineNum">    1005 </span>                :<span class="lineCov">          2 :                            __gnu_cxx::__ops::__iter_equal_to_iter());</span></a>
+<a name="1004"><span class="lineNum">    1004 </span>                :<span class="lineNoCov">          0 :       return std::__unique(__first, __last,</span></a>
+<a name="1005"><span class="lineNum">    1005 </span>                :<span class="lineNoCov">          0 :                            __gnu_cxx::__ops::__iter_equal_to_iter());</span></a>
 <a name="1006"><span class="lineNum">    1006 </span>                :            :     }</a>
 <a name="1007"><span class="lineNum">    1007 </span>                :            : </a>
 <a name="1008"><span class="lineNum">    1008 </span>                :            :   /**</a>
@@ -1914,12 +1914,12 @@
 <a name="1836"><span class="lineNum">    1836 </span>                :            :   /// This is a helper function for the sort routine.</a>
 <a name="1837"><span class="lineNum">    1837 </span>                :            :   template&lt;typename _RandomAccessIterator, typename _Compare&gt;</a>
 <a name="1838"><span class="lineNum">    1838 </span>                :            :     void</a>
-<a name="1839"><span class="lineNum">    1839 </span>                :<span class="lineCov">          1 :     __insertion_sort(_RandomAccessIterator __first,</span></a>
+<a name="1839"><span class="lineNum">    1839 </span>                :<span class="lineNoCov">          0 :     __insertion_sort(_RandomAccessIterator __first,</span></a>
 <a name="1840"><span class="lineNum">    1840 </span>                :            :                      _RandomAccessIterator __last, _Compare __comp)</a>
 <a name="1841"><span class="lineNum">    1841 </span>                :            :     {</a>
-<a name="1842"><span class="lineNum">    1842 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          1 :       if (__first == __last) return;</span></a>
+<a name="1842"><span class="lineNum">    1842 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       if (__first == __last) return;</span></a>
 <a name="1843"><span class="lineNum">    1843 </span>                :            : </a>
-<a name="1844"><span class="lineNum">    1844 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          1 :       for (_RandomAccessIterator __i = __first + 1; __i != __last; ++__i)</span></a>
+<a name="1844"><span class="lineNum">    1844 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       for (_RandomAccessIterator __i = __first + 1; __i != __last; ++__i)</span></a>
 <a name="1845"><span class="lineNum">    1845 </span>                :            :         {</a>
 <a name="1846"><span class="lineNum">    1846 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :           if (__comp(__i, __first))</span></a>
 <a name="1847"><span class="lineNum">    1847 </span>                :            :             {</a>
@@ -1954,18 +1954,18 @@
 <a name="1876"><span class="lineNum">    1876 </span>                :            :   /// This is a helper function for the sort routine.</a>
 <a name="1877"><span class="lineNum">    1877 </span>                :            :   template&lt;typename _RandomAccessIterator, typename _Compare&gt;</a>
 <a name="1878"><span class="lineNum">    1878 </span>                :            :     void</a>
-<a name="1879"><span class="lineNum">    1879 </span>                :<span class="lineCov">          1 :     __final_insertion_sort(_RandomAccessIterator __first,</span></a>
+<a name="1879"><span class="lineNum">    1879 </span>                :<span class="lineNoCov">          0 :     __final_insertion_sort(_RandomAccessIterator __first,</span></a>
 <a name="1880"><span class="lineNum">    1880 </span>                :            :                            _RandomAccessIterator __last, _Compare __comp)</a>
 <a name="1881"><span class="lineNum">    1881 </span>                :            :     {</a>
-<a name="1882"><span class="lineNum">    1882 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          1 :       if (__last - __first &gt; int(_S_threshold))</span></a>
+<a name="1882"><span class="lineNum">    1882 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       if (__last - __first &gt; int(_S_threshold))</span></a>
 <a name="1883"><span class="lineNum">    1883 </span>                :            :         {</a>
 <a name="1884"><span class="lineNum">    1884 </span>                :<span class="lineNoCov">          0 :           std::__insertion_sort(__first, __first + int(_S_threshold), __comp);</span></a>
 <a name="1885"><span class="lineNum">    1885 </span>                :<span class="lineNoCov">          0 :           std::__unguarded_insertion_sort(__first + int(_S_threshold), __last,</span></a>
 <a name="1886"><span class="lineNum">    1886 </span>                :            :                                           __comp);</a>
 <a name="1887"><span class="lineNum">    1887 </span>                :            :         }</a>
 <a name="1888"><span class="lineNum">    1888 </span>                :            :       else</a>
-<a name="1889"><span class="lineNum">    1889 </span>                :<span class="lineCov">          1 :         std::__insertion_sort(__first, __last, __comp);</span></a>
-<a name="1890"><span class="lineNum">    1890 </span>                :<span class="lineCov">          1 :     }</span></a>
+<a name="1889"><span class="lineNum">    1889 </span>                :<span class="lineNoCov">          0 :         std::__insertion_sort(__first, __last, __comp);</span></a>
+<a name="1890"><span class="lineNum">    1890 </span>                :<span class="lineNoCov">          0 :     }</span></a>
 <a name="1891"><span class="lineNum">    1891 </span>                :            : </a>
 <a name="1892"><span class="lineNum">    1892 </span>                :            :   /// This is a helper function...</a>
 <a name="1893"><span class="lineNum">    1893 </span>                :            :   template&lt;typename _RandomAccessIterator, typename _Compare&gt;</a>
@@ -2014,11 +2014,11 @@
 <a name="1936"><span class="lineNum">    1936 </span>                :            :   /// This is a helper function for the sort routine.</a>
 <a name="1937"><span class="lineNum">    1937 </span>                :            :   template&lt;typename _RandomAccessIterator, typename _Size, typename _Compare&gt;</a>
 <a name="1938"><span class="lineNum">    1938 </span>                :            :     void</a>
-<a name="1939"><span class="lineNum">    1939 </span>                :<span class="lineCov">          1 :     __introsort_loop(_RandomAccessIterator __first,</span></a>
+<a name="1939"><span class="lineNum">    1939 </span>                :<span class="lineNoCov">          0 :     __introsort_loop(_RandomAccessIterator __first,</span></a>
 <a name="1940"><span class="lineNum">    1940 </span>                :            :                      _RandomAccessIterator __last,</a>
 <a name="1941"><span class="lineNum">    1941 </span>                :            :                      _Size __depth_limit, _Compare __comp)</a>
 <a name="1942"><span class="lineNum">    1942 </span>                :            :     {</a>
-<a name="1943"><span class="lineNum">    1943 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          1 :       while (__last - __first &gt; int(_S_threshold))</span></a>
+<a name="1943"><span class="lineNum">    1943 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       while (__last - __first &gt; int(_S_threshold))</span></a>
 <a name="1944"><span class="lineNum">    1944 </span>                :            :         {</a>
 <a name="1945"><span class="lineNum">    1945 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :           if (__depth_limit == 0)</span></a>
 <a name="1946"><span class="lineNum">    1946 </span>                :            :             {</a>
@@ -2037,17 +2037,17 @@
 <a name="1959"><span class="lineNum">    1959 </span>                :            : </a>
 <a name="1960"><span class="lineNum">    1960 </span>                :            :   template&lt;typename _RandomAccessIterator, typename _Compare&gt;</a>
 <a name="1961"><span class="lineNum">    1961 </span>                :            :     inline void</a>
-<a name="1962"><span class="lineNum">    1962 </span>                :<span class="lineCov">          1 :     __sort(_RandomAccessIterator __first, _RandomAccessIterator __last,</span></a>
+<a name="1962"><span class="lineNum">    1962 </span>                :<span class="lineNoCov">          0 :     __sort(_RandomAccessIterator __first, _RandomAccessIterator __last,</span></a>
 <a name="1963"><span class="lineNum">    1963 </span>                :            :            _Compare __comp)</a>
 <a name="1964"><span class="lineNum">    1964 </span>                :            :     {</a>
-<a name="1965"><span class="lineNum">    1965 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          1 :       if (__first != __last)</span></a>
+<a name="1965"><span class="lineNum">    1965 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       if (__first != __last)</span></a>
 <a name="1966"><span class="lineNum">    1966 </span>                :            :         {</a>
-<a name="1967"><span class="lineNum">    1967 </span>                :<span class="lineCov">          1 :           std::__introsort_loop(__first, __last,</span></a>
-<a name="1968"><span class="lineNum">    1968 </span>                :<span class="lineCov">          1 :                                 std::__lg(__last - __first) * 2,</span></a>
+<a name="1967"><span class="lineNum">    1967 </span>                :<span class="lineNoCov">          0 :           std::__introsort_loop(__first, __last,</span></a>
+<a name="1968"><span class="lineNum">    1968 </span>                :<span class="lineNoCov">          0 :                                 std::__lg(__last - __first) * 2,</span></a>
 <a name="1969"><span class="lineNum">    1969 </span>                :            :                                 __comp);</a>
-<a name="1970"><span class="lineNum">    1970 </span>                :<span class="lineCov">          1 :           std::__final_insertion_sort(__first, __last, __comp);</span></a>
+<a name="1970"><span class="lineNum">    1970 </span>                :<span class="lineNoCov">          0 :           std::__final_insertion_sort(__first, __last, __comp);</span></a>
 <a name="1971"><span class="lineNum">    1971 </span>                :            :         }</a>
-<a name="1972"><span class="lineNum">    1972 </span>                :<span class="lineCov">          1 :     }</span></a>
+<a name="1972"><span class="lineNum">    1972 </span>                :<span class="lineNoCov">          0 :     }</span></a>
 <a name="1973"><span class="lineNum">    1973 </span>                :            : </a>
 <a name="1974"><span class="lineNum">    1974 </span>                :            :   template&lt;typename _RandomAccessIterator, typename _Size, typename _Compare&gt;</a>
 <a name="1975"><span class="lineNum">    1975 </span>                :            :     void</a>
@@ -4029,7 +4029,7 @@
 <a name="3951"><span class="lineNum">    3951 </span>                :            :   */</a>
 <a name="3952"><span class="lineNum">    3952 </span>                :            :   template&lt;typename _InputIterator, typename _Predicate&gt;</a>
 <a name="3953"><span class="lineNum">    3953 </span>                :            :     inline _InputIterator</a>
-<a name="3954"><span class="lineNum">    3954 </span>                :<span class="lineCov">          1 :     find_if(_InputIterator __first, _InputIterator __last,</span></a>
+<a name="3954"><span class="lineNum">    3954 </span>                :<span class="lineNoCov">          0 :     find_if(_InputIterator __first, _InputIterator __last,</span></a>
 <a name="3955"><span class="lineNum">    3955 </span>                :            :             _Predicate __pred)</a>
 <a name="3956"><span class="lineNum">    3956 </span>                :            :     {</a>
 <a name="3957"><span class="lineNum">    3957 </span>                :            :       // concept requirements</a>
@@ -4038,8 +4038,8 @@
 <a name="3960"><span class="lineNum">    3960 </span>                :            :               typename iterator_traits&lt;_InputIterator&gt;::value_type&gt;)</a>
 <a name="3961"><span class="lineNum">    3961 </span>                :            :       __glibcxx_requires_valid_range(__first, __last);</a>
 <a name="3962"><span class="lineNum">    3962 </span>                :            : </a>
-<a name="3963"><span class="lineNum">    3963 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineCov">          1 :       return std::__find_if(__first, __last,</span></a>
-<a name="3964"><span class="lineNum">    3964 </span>                :<span class="lineCov">          1 :                             __gnu_cxx::__ops::__pred_iter(__pred));</span></a>
+<a name="3963"><span class="lineNum">    3963 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :       return std::__find_if(__first, __last,</span></a>
+<a name="3964"><span class="lineNum">    3964 </span>                :<span class="lineNoCov">          0 :                             __gnu_cxx::__ops::__pred_iter(__pred));</span></a>
 <a name="3965"><span class="lineNum">    3965 </span>                :            :     }</a>
 <a name="3966"><span class="lineNum">    3966 </span>                :            : </a>
 <a name="3967"><span class="lineNum">    3967 </span>                :            :   /**</a>
@@ -4401,7 +4401,7 @@
 <a name="4323"><span class="lineNum">    4323 </span>                :            :   template&lt;typename _InputIterator, typename _OutputIterator,</a>
 <a name="4324"><span class="lineNum">    4324 </span>                :            :            typename _UnaryOperation&gt;</a>
 <a name="4325"><span class="lineNum">    4325 </span>                :            :     _OutputIterator</a>
-<a name="4326"><span class="lineNum">    4326 </span>                :<span class="lineCov">          8 :     transform(_InputIterator __first, _InputIterator __last,</span></a>
+<a name="4326"><span class="lineNum">    4326 </span>                :<span class="lineCov">         86 :     transform(_InputIterator __first, _InputIterator __last,</span></a>
 <a name="4327"><span class="lineNum">    4327 </span>                :            :               _OutputIterator __result, _UnaryOperation __unary_op)</a>
 <a name="4328"><span class="lineNum">    4328 </span>                :            :     {</a>
 <a name="4329"><span class="lineNum">    4329 </span>                :            :       // concept requirements</a>
@@ -4411,9 +4411,9 @@
 <a name="4333"><span class="lineNum">    4333 </span>                :            :             __typeof__(__unary_op(*__first))&gt;)</a>
 <a name="4334"><span class="lineNum">    4334 </span>                :            :       __glibcxx_requires_valid_range(__first, __last);</a>
 <a name="4335"><span class="lineNum">    4335 </span>                :            : </a>
-<a name="4336"><span class="lineNum">    4336 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          8 :       for (; __first != __last; ++__first, (void)++__result)</span></a>
-<a name="4337"><span class="lineNum">    4337 </span>                :<span class="lineCov">          6 :         *__result = __unary_op(*__first);</span></a>
-<a name="4338"><span class="lineNum">    4338 </span>                :<span class="lineCov">          2 :       return __result;</span></a>
+<a name="4336"><span class="lineNum">    4336 </span>        [<span class="branchCov" title="Branch 0 was taken 83 times"> + </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span>]:<span class="lineCov">         86 :       for (; __first != __last; ++__first, (void)++__result)</span></a>
+<a name="4337"><span class="lineNum">    4337 </span>                :<span class="lineCov">         83 :         *__result = __unary_op(*__first);</span></a>
+<a name="4338"><span class="lineNum">    4338 </span>                :<span class="lineCov">          3 :       return __result;</span></a>
 <a name="4339"><span class="lineNum">    4339 </span>                :            :     }</a>
 <a name="4340"><span class="lineNum">    4340 </span>                :            : </a>
 <a name="4341"><span class="lineNum">    4341 </span>                :            :   /**</a>
@@ -4932,7 +4932,7 @@
 <a name="4854"><span class="lineNum">    4854 </span>                :            :   */</a>
 <a name="4855"><span class="lineNum">    4855 </span>                :            :   template&lt;typename _RandomAccessIterator&gt;</a>
 <a name="4856"><span class="lineNum">    4856 </span>                :            :     inline void</a>
-<a name="4857"><span class="lineNum">    4857 </span>                :<span class="lineCov">          1 :     sort(_RandomAccessIterator __first, _RandomAccessIterator __last)</span></a>
+<a name="4857"><span class="lineNum">    4857 </span>                :<span class="lineNoCov">          0 :     sort(_RandomAccessIterator __first, _RandomAccessIterator __last)</span></a>
 <a name="4858"><span class="lineNum">    4858 </span>                :            :     {</a>
 <a name="4859"><span class="lineNum">    4859 </span>                :            :       // concept requirements</a>
 <a name="4860"><span class="lineNum">    4860 </span>                :            :       __glibcxx_function_requires(_Mutable_RandomAccessIteratorConcept&lt;</a>
@@ -4942,8 +4942,8 @@
 <a name="4864"><span class="lineNum">    4864 </span>                :            :       __glibcxx_requires_valid_range(__first, __last);</a>
 <a name="4865"><span class="lineNum">    4865 </span>                :            :       __glibcxx_requires_irreflexive(__first, __last);</a>
 <a name="4866"><span class="lineNum">    4866 </span>                :            : </a>
-<a name="4867"><span class="lineNum">    4867 </span>                :<span class="lineCov">          1 :       std::__sort(__first, __last, __gnu_cxx::__ops::__iter_less_iter());</span></a>
-<a name="4868"><span class="lineNum">    4868 </span>                :<span class="lineCov">          1 :     }</span></a>
+<a name="4867"><span class="lineNum">    4867 </span>                :<span class="lineNoCov">          0 :       std::__sort(__first, __last, __gnu_cxx::__ops::__iter_less_iter());</span></a>
+<a name="4868"><span class="lineNum">    4868 </span>                :<span class="lineNoCov">          0 :     }</span></a>
 <a name="4869"><span class="lineNum">    4869 </span>                :            : </a>
 <a name="4870"><span class="lineNum">    4870 </span>                :            :   /**</a>
 <a name="4871"><span class="lineNum">    4871 </span>                :            :    *  @brief Sort the elements of a sequence using a predicate for comparison.</a>

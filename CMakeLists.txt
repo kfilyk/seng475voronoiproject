@@ -12,18 +12,18 @@ if(ENABLE_COVERAGE)
 	include(CodeCoverage.cmake)
 	append_coverage_compiler_flags()
 endif()
-
-add_executable(test_voronoi ./app/test_voronoi.cpp)
+include_directories(include)
+add_executable(test_voronoi ./app/tests/test_voronoi.cpp)
 target_link_libraries(test_voronoi CGAL::CGAL)
-add_executable(gen_points ./include/gen_points.cpp)
-
-
+add_executable(gen_points ./app/utilities/gen_points.cpp)
 if(ENABLE_COVERAGE)
 	setup_target_for_coverage_lcov(
 		NAME coverage
 		EXECUTABLE ${CMAKE_CURRENT_BINARY_DIR}/test_voronoi
+		EXECUTABLE ${CMAKE_CURRENT_BINARY_DIR}/gen_points
 		LCOV_ARGS --rc lcov_branch_coverage=1
 		GENHTML_ARGS --legend --branch-coverage
-		DEPENDENCIES test_voronoi)
+		DEPENDENCIES test_voronoi gen_points)
 endif()
+
 

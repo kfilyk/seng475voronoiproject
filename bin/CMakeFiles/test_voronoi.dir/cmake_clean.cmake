@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/test_voronoi.dir/app/test_voronoi.cpp.o"
+  "CMakeFiles/test_voronoi.dir/app/tests/test_voronoi.cpp.o"
   "test_voronoi"
   "test_voronoi.pdb"
 )

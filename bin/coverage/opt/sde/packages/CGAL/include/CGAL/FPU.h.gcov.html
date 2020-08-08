@@ -31,18 +31,18 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">21</td>
-            <td class="headerCovTableEntry">21</td>
-            <td class="headerCovTableEntryHi">100.0 %</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2020-07-07 12:01:38</td>
+            <td class="headerValue">2020-08-08 14:09:33</td>
             <td></td>
             <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">7</td>
-            <td class="headerCovTableEntry">7</td>
-            <td class="headerCovTableEntryHi">100.0 %</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -216,7 +216,7 @@
 <a name="138"><span class="lineNum">     138 </span>                :            : // - (-a)-b -&gt; -(a+b)</a>
 <a name="139"><span class="lineNum">     139 </span>                :            : // - (-a)*b -&gt; -(a*b)</a>
 <a name="140"><span class="lineNum">     140 </span>                :            : // etc</a>
-<a name="141"><span class="lineNum">     141 </span>                :<span class="lineCov">         12 : inline double IA_opacify(double x)</span></a>
+<a name="141"><span class="lineNum">     141 </span>                :<span class="lineNoCov">          0 : inline double IA_opacify(double x)</span></a>
 <a name="142"><span class="lineNum">     142 </span>                :            : {</a>
 <a name="143"><span class="lineNum">     143 </span>                :            : #ifdef __llvm__</a>
 <a name="144"><span class="lineNum">     144 </span>                :            :   // LLVM's support for inline asm is completely messed up:</a>
@@ -251,7 +251,7 @@
 <a name="173"><span class="lineNum">     173 </span>                :            : # if defined __SSE2_MATH__ || (defined __INTEL_COMPILER &amp;&amp; defined __SSE2__)</a>
 <a name="174"><span class="lineNum">     174 </span>                :            : #  if __GNUC__ * 100 + __GNUC_MINOR__ &gt;= 409</a>
 <a name="175"><span class="lineNum">     175 </span>                :            :   // ICEs in reload/LRA with older versions.</a>
-<a name="176"><span class="lineNum">     176 </span>                :<span class="lineCov">         12 :   asm volatile (&quot;&quot; : &quot;+gx&quot;(x) );</span></a>
+<a name="176"><span class="lineNum">     176 </span>                :<span class="lineNoCov">          0 :   asm volatile (&quot;&quot; : &quot;+gx&quot;(x) );</span></a>
 <a name="177"><span class="lineNum">     177 </span>                :            : #  else</a>
 <a name="178"><span class="lineNum">     178 </span>                :            :   asm volatile (&quot;&quot; : &quot;+mx&quot;(x) );</a>
 <a name="179"><span class="lineNum">     179 </span>                :            : #  endif</a>
@@ -277,7 +277,7 @@
 <a name="199"><span class="lineNum">     199 </span>                :            : # else</a>
 <a name="200"><span class="lineNum">     200 </span>                :            :   asm volatile (&quot;&quot; : &quot;+g&quot;(x) );</a>
 <a name="201"><span class="lineNum">     201 </span>                :            : # endif</a>
-<a name="202"><span class="lineNum">     202 </span>                :<span class="lineCov">         12 :   return x;</span></a>
+<a name="202"><span class="lineNum">     202 </span>                :<span class="lineNoCov">          0 :   return x;</span></a>
 <a name="203"><span class="lineNum">     203 </span>                :            : #else</a>
 <a name="204"><span class="lineNum">     204 </span>                :            :   volatile double e = x;</a>
 <a name="205"><span class="lineNum">     205 </span>                :            :   return e;</a>
@@ -552,29 +552,29 @@
 <a name="474"><span class="lineNum">     474 </span>                :            : </a>
 <a name="475"><span class="lineNum">     475 </span>                :            : inline</a>
 <a name="476"><span class="lineNum">     476 </span>                :            : FPU_CW_t</a>
-<a name="477"><span class="lineNum">     477 </span>                :<span class="lineCov">          3 : FPU_get_cw (void)</span></a>
+<a name="477"><span class="lineNum">     477 </span>                :<span class="lineNoCov">          0 : FPU_get_cw (void)</span></a>
 <a name="478"><span class="lineNum">     478 </span>                :            : {</a>
 <a name="479"><span class="lineNum">     479 </span>                :            :     FPU_CW_t cw;</a>
-<a name="480"><span class="lineNum">     480 </span>                :<span class="lineCov">          3 :     CGAL_IA_GETFPCW(cw);</span></a>
-<a name="481"><span class="lineNum">     481 </span>                :<span class="lineCov">          3 :     return cw;</span></a>
+<a name="480"><span class="lineNum">     480 </span>                :<span class="lineNoCov">          0 :     CGAL_IA_GETFPCW(cw);</span></a>
+<a name="481"><span class="lineNum">     481 </span>                :<span class="lineNoCov">          0 :     return cw;</span></a>
 <a name="482"><span class="lineNum">     482 </span>                :            : }</a>
 <a name="483"><span class="lineNum">     483 </span>                :            : </a>
 <a name="484"><span class="lineNum">     484 </span>                :            : // User interface (cont):</a>
 <a name="485"><span class="lineNum">     485 </span>                :            : </a>
 <a name="486"><span class="lineNum">     486 </span>                :            : inline</a>
 <a name="487"><span class="lineNum">     487 </span>                :            : void</a>
-<a name="488"><span class="lineNum">     488 </span>                :<span class="lineCov">          2 : FPU_set_cw (FPU_CW_t cw)</span></a>
+<a name="488"><span class="lineNum">     488 </span>                :<span class="lineNoCov">          0 : FPU_set_cw (FPU_CW_t cw)</span></a>
 <a name="489"><span class="lineNum">     489 </span>                :            : {</a>
 <a name="490"><span class="lineNum">     490 </span>                :            :   CGAL_IA_SETFPCW(cw);</a>
-<a name="491"><span class="lineNum">     491 </span>                :<span class="lineCov">          2 : }</span></a>
+<a name="491"><span class="lineNum">     491 </span>                :<span class="lineNoCov">          0 : }</span></a>
 <a name="492"><span class="lineNum">     492 </span>                :            : </a>
 <a name="493"><span class="lineNum">     493 </span>                :            : inline</a>
 <a name="494"><span class="lineNum">     494 </span>                :            : FPU_CW_t</a>
-<a name="495"><span class="lineNum">     495 </span>                :<span class="lineCov">          1 : FPU_get_and_set_cw (FPU_CW_t cw)</span></a>
+<a name="495"><span class="lineNum">     495 </span>                :<span class="lineNoCov">          0 : FPU_get_and_set_cw (FPU_CW_t cw)</span></a>
 <a name="496"><span class="lineNum">     496 </span>                :            : {</a>
-<a name="497"><span class="lineNum">     497 </span>                :<span class="lineCov">          1 :     FPU_CW_t old = FPU_get_cw();</span></a>
-<a name="498"><span class="lineNum">     498 </span>                :<span class="lineCov">          1 :     FPU_set_cw(cw);</span></a>
-<a name="499"><span class="lineNum">     499 </span>                :<span class="lineCov">          1 :     return old;</span></a>
+<a name="497"><span class="lineNum">     497 </span>                :<span class="lineNoCov">          0 :     FPU_CW_t old = FPU_get_cw();</span></a>
+<a name="498"><span class="lineNum">     498 </span>                :<span class="lineNoCov">          0 :     FPU_set_cw(cw);</span></a>
+<a name="499"><span class="lineNum">     499 </span>                :<span class="lineNoCov">          0 :     return old;</span></a>
 <a name="500"><span class="lineNum">     500 </span>                :            : }</a>
 <a name="501"><span class="lineNum">     501 </span>                :            : </a>
 <a name="502"><span class="lineNum">     502 </span>                :            : </a>
@@ -586,13 +586,13 @@
 <a name="508"><span class="lineNum">     508 </span>                :            : template &lt;&gt;</a>
 <a name="509"><span class="lineNum">     509 </span>                :            : struct Protect_FPU_rounding&lt;true&gt;</a>
 <a name="510"><span class="lineNum">     510 </span>                :            : {</a>
-<a name="511"><span class="lineNum">     511 </span>                :<span class="lineCov">          1 :   Protect_FPU_rounding(FPU_CW_t r = CGAL_FE_UPWARD)</span></a>
-<a name="512"><span class="lineNum">     512 </span>                :<span class="lineCov">          1 :     : backup( FPU_get_and_set_cw(r) ) {}</span></a>
+<a name="511"><span class="lineNum">     511 </span>                :<span class="lineNoCov">          0 :   Protect_FPU_rounding(FPU_CW_t r = CGAL_FE_UPWARD)</span></a>
+<a name="512"><span class="lineNum">     512 </span>                :<span class="lineNoCov">          0 :     : backup( FPU_get_and_set_cw(r) ) {}</span></a>
 <a name="513"><span class="lineNum">     513 </span>                :            : </a>
-<a name="514"><span class="lineNum">     514 </span>                :<span class="lineCov">          1 :   ~Protect_FPU_rounding()</span></a>
-<a name="515"><span class="lineNum">     515 </span>                :<span class="lineCov">          1 :   {</span></a>
-<a name="516"><span class="lineNum">     516 </span>                :<span class="lineCov">          1 :      FPU_set_cw(backup);</span></a>
-<a name="517"><span class="lineNum">     517 </span>                :<span class="lineCov">          1 :   }</span></a>
+<a name="514"><span class="lineNum">     514 </span>                :<span class="lineNoCov">          0 :   ~Protect_FPU_rounding()</span></a>
+<a name="515"><span class="lineNum">     515 </span>                :<span class="lineNoCov">          0 :   {</span></a>
+<a name="516"><span class="lineNum">     516 </span>                :<span class="lineNoCov">          0 :      FPU_set_cw(backup);</span></a>
+<a name="517"><span class="lineNum">     517 </span>                :<span class="lineNoCov">          0 :   }</span></a>
 <a name="518"><span class="lineNum">     518 </span>                :            : </a>
 <a name="519"><span class="lineNum">     519 </span>                :            : private:</a>
 <a name="520"><span class="lineNum">     520 </span>                :            :   FPU_CW_t backup;</a>
@@ -614,10 +614,10 @@
 <a name="536"><span class="lineNum">     536 </span>                :            : struct Checked_protect_FPU_rounding</a>
 <a name="537"><span class="lineNum">     537 </span>                :            :   : Protect_FPU_rounding&lt;Protected&gt;</a>
 <a name="538"><span class="lineNum">     538 </span>                :            : {</a>
-<a name="539"><span class="lineNum">     539 </span>                :<span class="lineCov">          1 :   Checked_protect_FPU_rounding()</span></a>
-<a name="540"><span class="lineNum">     540 </span>                :<span class="lineCov">          1 :   {</span></a>
+<a name="539"><span class="lineNum">     539 </span>                :<span class="lineNoCov">          0 :   Checked_protect_FPU_rounding()</span></a>
+<a name="540"><span class="lineNum">     540 </span>                :<span class="lineNoCov">          0 :   {</span></a>
 <a name="541"><span class="lineNum">     541 </span>                :            :     CGAL_expensive_assertion(FPU_get_cw() == CGAL_FE_UPWARD);</a>
-<a name="542"><span class="lineNum">     542 </span>                :<span class="lineCov">          1 :   }</span></a>
+<a name="542"><span class="lineNum">     542 </span>                :<span class="lineNoCov">          0 :   }</span></a>
 <a name="543"><span class="lineNum">     543 </span>                :            : </a>
 <a name="544"><span class="lineNum">     544 </span>                :            :   Checked_protect_FPU_rounding(FPU_CW_t r)</a>
 <a name="545"><span class="lineNum">     545 </span>                :            :     : Protect_FPU_rounding&lt;Protected&gt;(r)</a>

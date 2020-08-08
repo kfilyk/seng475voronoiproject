@@ -31,18 +31,18 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">36</td>
+            <td class="headerCovTableEntry">38</td>
             <td class="headerCovTableEntry">72</td>
-            <td class="headerCovTableEntryLo">50.0 %</td>
+            <td class="headerCovTableEntryLo">52.8 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2020-07-07 12:01:38</td>
+            <td class="headerValue">2020-08-08 14:09:33</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">57</td>
+            <td class="headerCovTableEntry">55</td>
             <td class="headerCovTableEntry">164</td>
-            <td class="headerCovTableEntryLo">34.8 %</td>
+            <td class="headerCovTableEntryLo">33.5 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -229,7 +229,7 @@
 <a name="151"><span class="lineNum">     151 </span>                :<span class="lineCov">          3 :         : _M_t(__p, std::forward&lt;_Del&gt;(__d)) { }</span></a>
 <a name="152"><span class="lineNum">     152 </span>                :            : </a>
 <a name="153"><span class="lineNum">     153 </span>                :<span class="lineCov">         14 :       pointer&amp;   _M_ptr() { return std::get&lt;0&gt;(_M_t); }</span></a>
-<a name="154"><span class="lineNum">     154 </span>                :<span class="lineCov">         46 :       pointer    _M_ptr() const { return std::get&lt;0&gt;(_M_t); }</span></a>
+<a name="154"><span class="lineNum">     154 </span>                :<span class="lineCov">         19 :       pointer    _M_ptr() const { return std::get&lt;0&gt;(_M_t); }</span></a>
 <a name="155"><span class="lineNum">     155 </span>                :<span class="lineCov">          7 :       _Dp&amp;       _M_deleter() { return std::get&lt;1&gt;(_M_t); }</span></a>
 <a name="156"><span class="lineNum">     156 </span>                :            :       const _Dp&amp; _M_deleter() const { return std::get&lt;1&gt;(_M_t); }</a>
 <a name="157"><span class="lineNum">     157 </span>                :            : </a>
@@ -419,24 +419,24 @@
 <a name="341"><span class="lineNum">     341 </span>                :            : </a>
 <a name="342"><span class="lineNum">     342 </span>                :            :       /// Dereference the stored pointer.</a>
 <a name="343"><span class="lineNum">     343 </span>                :            :       typename add_lvalue_reference&lt;element_type&gt;::type</a>
-<a name="344"><span class="lineNum">     344 </span>                :<span class="lineNoCov">          0 :       operator*() const</span></a>
+<a name="344"><span class="lineNum">     344 </span>                :<span class="lineCov">          1 :       operator*() const</span></a>
 <a name="345"><span class="lineNum">     345 </span>                :            :       {</a>
 <a name="346"><span class="lineNum">     346 </span>                :            :         __glibcxx_assert(get() != pointer());</a>
-<a name="347"><span class="lineNum">     347 </span>                :<span class="lineNoCov">          0 :         return *get();</span></a>
+<a name="347"><span class="lineNum">     347 </span>                :<span class="lineCov">          1 :         return *get();</span></a>
 <a name="348"><span class="lineNum">     348 </span>                :            :       }</a>
 <a name="349"><span class="lineNum">     349 </span>                :            : </a>
 <a name="350"><span class="lineNum">     350 </span>                :            :       /// Return the stored pointer.</a>
 <a name="351"><span class="lineNum">     351 </span>                :            :       pointer</a>
-<a name="352"><span class="lineNum">     352 </span>                :<span class="lineCov">         34 :       operator-&gt;() const noexcept</span></a>
+<a name="352"><span class="lineNum">     352 </span>                :<span class="lineCov">         13 :       operator-&gt;() const noexcept</span></a>
 <a name="353"><span class="lineNum">     353 </span>                :            :       {</a>
 <a name="354"><span class="lineNum">     354 </span>                :            :         _GLIBCXX_DEBUG_PEDASSERT(get() != pointer());</a>
-<a name="355"><span class="lineNum">     355 </span>                :<span class="lineCov">         34 :         return get();</span></a>
+<a name="355"><span class="lineNum">     355 </span>                :<span class="lineCov">         13 :         return get();</span></a>
 <a name="356"><span class="lineNum">     356 </span>                :            :       }</a>
 <a name="357"><span class="lineNum">     357 </span>                :            : </a>
 <a name="358"><span class="lineNum">     358 </span>                :            :       /// Return the stored pointer.</a>
 <a name="359"><span class="lineNum">     359 </span>                :            :       pointer</a>
-<a name="360"><span class="lineNum">     360 </span>                :<span class="lineCov">         46 :       get() const noexcept</span></a>
-<a name="361"><span class="lineNum">     361 </span>                :<span class="lineCov">         46 :       { return _M_t._M_ptr(); }</span></a>
+<a name="360"><span class="lineNum">     360 </span>                :<span class="lineCov">         19 :       get() const noexcept</span></a>
+<a name="361"><span class="lineNum">     361 </span>                :<span class="lineCov">         19 :       { return _M_t._M_ptr(); }</span></a>
 <a name="362"><span class="lineNum">     362 </span>                :            : </a>
 <a name="363"><span class="lineNum">     363 </span>                :            :       /// Return a reference to the stored deleter.</a>
 <a name="364"><span class="lineNum">     364 </span>                :            :       deleter_type&amp;</a>

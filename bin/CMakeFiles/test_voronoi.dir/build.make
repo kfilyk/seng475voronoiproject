@@ -80,27 +80,27 @@ include CMakeFiles/test_voronoi.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/test_voronoi.dir/flags.make
 
-CMakeFiles/test_voronoi.dir/app/test_voronoi.cpp.o: CMakeFiles/test_voronoi.dir/flags.make
-CMakeFiles/test_voronoi.dir/app/test_voronoi.cpp.o: ../app/test_voronoi.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jdoe/Desktop/project/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/test_voronoi.dir/app/test_voronoi.cpp.o"
-	/opt/sde/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test_voronoi.dir/app/test_voronoi.cpp.o -c /home/jdoe/Desktop/project/app/test_voronoi.cpp
+CMakeFiles/test_voronoi.dir/app/tests/test_voronoi.cpp.o: CMakeFiles/test_voronoi.dir/flags.make
+CMakeFiles/test_voronoi.dir/app/tests/test_voronoi.cpp.o: ../app/tests/test_voronoi.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jdoe/Desktop/project/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/test_voronoi.dir/app/tests/test_voronoi.cpp.o"
+	/opt/sde/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test_voronoi.dir/app/tests/test_voronoi.cpp.o -c /home/jdoe/Desktop/project/app/tests/test_voronoi.cpp
 
-CMakeFiles/test_voronoi.dir/app/test_voronoi.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test_voronoi.dir/app/test_voronoi.cpp.i"
-	/opt/sde/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jdoe/Desktop/project/app/test_voronoi.cpp > CMakeFiles/test_voronoi.dir/app/test_voronoi.cpp.i
+CMakeFiles/test_voronoi.dir/app/tests/test_voronoi.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test_voronoi.dir/app/tests/test_voronoi.cpp.i"
+	/opt/sde/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jdoe/Desktop/project/app/tests/test_voronoi.cpp > CMakeFiles/test_voronoi.dir/app/tests/test_voronoi.cpp.i
 
-CMakeFiles/test_voronoi.dir/app/test_voronoi.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_voronoi.dir/app/test_voronoi.cpp.s"
-	/opt/sde/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jdoe/Desktop/project/app/test_voronoi.cpp -o CMakeFiles/test_voronoi.dir/app/test_voronoi.cpp.s
+CMakeFiles/test_voronoi.dir/app/tests/test_voronoi.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_voronoi.dir/app/tests/test_voronoi.cpp.s"
+	/opt/sde/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jdoe/Desktop/project/app/tests/test_voronoi.cpp -o CMakeFiles/test_voronoi.dir/app/tests/test_voronoi.cpp.s
 
 # Object files for target test_voronoi
 test_voronoi_OBJECTS = \
-"CMakeFiles/test_voronoi.dir/app/test_voronoi.cpp.o"
+"CMakeFiles/test_voronoi.dir/app/tests/test_voronoi.cpp.o"
 
 # External object files for target test_voronoi
 test_voronoi_EXTERNAL_OBJECTS =
 
-test_voronoi: CMakeFiles/test_voronoi.dir/app/test_voronoi.cpp.o
+test_voronoi: CMakeFiles/test_voronoi.dir/app/tests/test_voronoi.cpp.o
 test_voronoi: CMakeFiles/test_voronoi.dir/build.make
 test_voronoi: /usr/lib64/libmpfr.so
 test_voronoi: /usr/lib64/libgmp.so

@@ -77,11 +77,12 @@ CMAKE_BINARY_DIR = /home/jdoe/Desktop/project/bin
 include CMakeFiles/coverage.dir/progress.make
 
 CMakeFiles/coverage: test_voronoi
+CMakeFiles/coverage: gen_points
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jdoe/Desktop/project/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Resetting code coverage counters to zero."
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Processing code coverage counters and generating report."
 	/opt/sde/packages/lcov/bin/lcov --rc lcov_branch_coverage=1 --gcov-tool /opt/sde/packages/gcc/bin/gcov -directory . -b /home/jdoe/Desktop/project --zerocounters
 	/opt/sde/packages/lcov/bin/lcov --rc lcov_branch_coverage=1 --gcov-tool /opt/sde/packages/gcc/bin/gcov -c -i -d . -b /home/jdoe/Desktop/project -o coverage.base
-	/home/jdoe/Desktop/project/bin/test_voronoi
+	/home/jdoe/Desktop/project/bin/test_voronoi /home/jdoe/Desktop/project/bin/gen_points
 	/opt/sde/packages/lcov/bin/lcov --rc lcov_branch_coverage=1 --gcov-tool /opt/sde/packages/gcc/bin/gcov --directory . -b /home/jdoe/Desktop/project --capture --output-file coverage.capture
 	/opt/sde/packages/lcov/bin/lcov --rc lcov_branch_coverage=1 --gcov-tool /opt/sde/packages/gcc/bin/gcov -a coverage.base -a coverage.capture --output-file coverage.total
 	/opt/sde/packages/lcov/bin/lcov --rc lcov_branch_coverage=1 --gcov-tool /opt/sde/packages/gcc/bin/gcov --remove coverage.total --output-file coverage.info

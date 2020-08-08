@@ -1,1 +1,1 @@
-/opt/sde/bin/c++   -fsanitize=address -g -fprofile-arcs -ftest-coverage -g   CMakeFiles/gen_points.dir/include/gen_points.cpp.o  -o gen_points 
+/opt/sde/bin/c++   -fsanitize=address -g -fprofile-arcs -ftest-coverage -g   CMakeFiles/gen_points.dir/app/utilities/gen_points.cpp.o  -o gen_points 

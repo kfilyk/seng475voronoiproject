@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/gen_points.dir/include/gen_points.cpp.o"
+  "CMakeFiles/gen_points.dir/app/utilities/gen_points.cpp.o"
   "gen_points"
   "gen_points.pdb"
 )
