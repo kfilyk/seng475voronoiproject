@@ -4,12 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/jdoe/Desktop/project/include/gen_points.cpp" "/home/jdoe/Desktop/project/bin/CMakeFiles/gen_points.dir/include/gen_points.cpp.o"
+  "/home/jdoe/Desktop/project/app/gen_points.cpp" "/home/jdoe/Desktop/project/bin/CMakeFiles/gen_points.dir/app/gen_points.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "../include"
   )
 
 # Targets to which this target links.

@@ -6,5 +6,5 @@ CXX_FLAGS =  -fsanitize=address -g -fprofile-arcs -ftest-coverage -g   -froundin
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -I/home/jdoe/Desktop/project/include 
 

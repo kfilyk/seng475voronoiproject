@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2020-07-07 12:01:38</td>
+            <td class="headerValue">2020-07-07 20:06:46</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">0</td>
@@ -898,7 +898,7 @@
 <a name="820"><span class="lineNum">     820 </span>                :            : extern __inline unsigned int __attribute__((__gnu_inline__, __always_inline__, __artificial__))</a>
 <a name="821"><span class="lineNum">     821 </span>                :            : _mm_getcsr (void)</a>
 <a name="822"><span class="lineNum">     822 </span>                :            : {</a>
-<a name="823"><span class="lineNum">     823 </span>                :<span class="lineCov">          5 :   return __builtin_ia32_stmxcsr ();</span></a>
+<a name="823"><span class="lineNum">     823 </span>                :<span class="lineCov">          8 :   return __builtin_ia32_stmxcsr ();</span></a>
 <a name="824"><span class="lineNum">     824 </span>                :            : }</a>
 <a name="825"><span class="lineNum">     825 </span>                :            : </a>
 <a name="826"><span class="lineNum">     826 </span>                :            : /* Read exception bits from the control register.  */</a>
@@ -917,7 +917,7 @@
 <a name="839"><span class="lineNum">     839 </span>                :            : extern __inline unsigned int __attribute__((__gnu_inline__, __always_inline__, __artificial__))</a>
 <a name="840"><span class="lineNum">     840 </span>                :            : _MM_GET_ROUNDING_MODE (void)</a>
 <a name="841"><span class="lineNum">     841 </span>                :            : {</a>
-<a name="842"><span class="lineNum">     842 </span>                :<span class="lineCov">          3 :   return _mm_getcsr() &amp; _MM_ROUND_MASK;</span></a>
+<a name="842"><span class="lineNum">     842 </span>                :<span class="lineCov">          4 :   return _mm_getcsr() &amp; _MM_ROUND_MASK;</span></a>
 <a name="843"><span class="lineNum">     843 </span>                :            : }</a>
 <a name="844"><span class="lineNum">     844 </span>                :            : </a>
 <a name="845"><span class="lineNum">     845 </span>                :            : extern __inline unsigned int __attribute__((__gnu_inline__, __always_inline__, __artificial__))</a>
@@ -930,8 +930,8 @@
 <a name="852"><span class="lineNum">     852 </span>                :            : extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))</a>
 <a name="853"><span class="lineNum">     853 </span>                :            : _mm_setcsr (unsigned int __I)</a>
 <a name="854"><span class="lineNum">     854 </span>                :            : {</a>
-<a name="855"><span class="lineNum">     855 </span>                :<span class="lineCov">          2 :   __builtin_ia32_ldmxcsr (__I);</span></a>
-<a name="856"><span class="lineNum">     856 </span>                :<span class="lineCov">          2 : }</span></a>
+<a name="855"><span class="lineNum">     855 </span>                :<span class="lineCov">          4 :   __builtin_ia32_ldmxcsr (__I);</span></a>
+<a name="856"><span class="lineNum">     856 </span>                :<span class="lineCov">          4 : }</span></a>
 <a name="857"><span class="lineNum">     857 </span>                :            : </a>
 <a name="858"><span class="lineNum">     858 </span>                :            : /* Set exception bits in the control register.  */</a>
 <a name="859"><span class="lineNum">     859 </span>                :            : extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))</a>
@@ -949,8 +949,8 @@
 <a name="871"><span class="lineNum">     871 </span>                :            : extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))</a>
 <a name="872"><span class="lineNum">     872 </span>                :            : _MM_SET_ROUNDING_MODE (unsigned int __mode)</a>
 <a name="873"><span class="lineNum">     873 </span>                :            : {</a>
-<a name="874"><span class="lineNum">     874 </span>                :<span class="lineCov">          2 :   _mm_setcsr((_mm_getcsr() &amp; ~_MM_ROUND_MASK) | __mode);</span></a>
-<a name="875"><span class="lineNum">     875 </span>                :<span class="lineCov">          2 : }</span></a>
+<a name="874"><span class="lineNum">     874 </span>                :<span class="lineCov">          4 :   _mm_setcsr((_mm_getcsr() &amp; ~_MM_ROUND_MASK) | __mode);</span></a>
+<a name="875"><span class="lineNum">     875 </span>                :<span class="lineCov">          4 : }</span></a>
 <a name="876"><span class="lineNum">     876 </span>                :            : </a>
 <a name="877"><span class="lineNum">     877 </span>                :            : extern __inline void __attribute__((__gnu_inline__, __always_inline__, __artificial__))</a>
 <a name="878"><span class="lineNum">     878 </span>                :            : _MM_SET_FLUSH_ZERO_MODE (unsigned int __mode)</a>

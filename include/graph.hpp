@@ -1,9 +1,8 @@
 #include <iostream>
 #include <CGAL/Cartesian.h>
-
+#include <CGAL/Exact_predicates_inexact_constructions_kernel.h>
 typedef CGAL::Cartesian<double> K;
-typedef Kernel::Point_2<K> Point;
-typedef Kernel::Line_2<K> Line;
+typedef K::Point_2 Point;
 using namespace std;
 
 namespace voronoi {

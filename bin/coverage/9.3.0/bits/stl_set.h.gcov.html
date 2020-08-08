@@ -31,18 +31,18 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">16</td>
-            <td class="headerCovTableEntry">19</td>
-            <td class="headerCovTableEntryMed">84.2 %</td>
-          </tr>
-          <tr>
-            <td class="headerItem">Date:</td>
-            <td class="headerValue">2020-07-07 12:01:38</td>
-            <td></td>
-            <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">11</td>
             <td class="headerCovTableEntry">19</td>
             <td class="headerCovTableEntryLo">57.9 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2020-07-07 20:06:46</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">9</td>
+            <td class="headerCovTableEntry">19</td>
+            <td class="headerCovTableEntryLo">47.4 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">5</td>
+            <td class="headerCovTableEntry">4</td>
             <td class="headerCovTableEntry">10</td>
-            <td class="headerCovTableEntryLo">50.0 %</td>
+            <td class="headerCovTableEntryLo">40.0 %</td>
           </tr>
           <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -537,8 +537,8 @@
 <a name="459"><span class="lineNum">     459 </span>                :            :        */</a>
 <a name="460"><span class="lineNum">     460 </span>                :            :       template&lt;typename... _Args&gt;</a>
 <a name="461"><span class="lineNum">     461 </span>                :            :         std::pair&lt;iterator, bool&gt;</a>
-<a name="462"><span class="lineNum">     462 </span>                :<span class="lineCov">          1 :         emplace(_Args&amp;&amp;... __args)</span></a>
-<a name="463"><span class="lineNum">     463 </span>                :<span class="lineCov">          1 :         { return _M_t._M_emplace_unique(std::forward&lt;_Args&gt;(__args)...); }</span></a>
+<a name="462"><span class="lineNum">     462 </span>                :<span class="lineNoCov">          0 :         emplace(_Args&amp;&amp;... __args)</span></a>
+<a name="463"><span class="lineNum">     463 </span>                :<span class="lineNoCov">          0 :         { return _M_t._M_emplace_unique(std::forward&lt;_Args&gt;(__args)...); }</span></a>
 <a name="464"><span class="lineNum">     464 </span>                :            : </a>
 <a name="465"><span class="lineNum">     465 </span>                :            :       /**</a>
 <a name="466"><span class="lineNum">     466 </span>                :            :        *  @brief Attempts to insert an element into the %set.</a>
@@ -584,11 +584,11 @@
 <a name="506"><span class="lineNum">     506 </span>                :            :        *  Insertion requires logarithmic time.</a>
 <a name="507"><span class="lineNum">     507 </span>                :            :        */</a>
 <a name="508"><span class="lineNum">     508 </span>                :            :       std::pair&lt;iterator, bool&gt;</a>
-<a name="509"><span class="lineNum">     509 </span>                :<span class="lineCov">          1 :       insert(const value_type&amp; __x)</span></a>
+<a name="509"><span class="lineNum">     509 </span>                :<span class="lineNoCov">          0 :       insert(const value_type&amp; __x)</span></a>
 <a name="510"><span class="lineNum">     510 </span>                :            :       {</a>
-<a name="511"><span class="lineNum">     511 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          1 :         std::pair&lt;typename _Rep_type::iterator, bool&gt; __p =</span></a>
+<a name="511"><span class="lineNum">     511 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :         std::pair&lt;typename _Rep_type::iterator, bool&gt; __p =</span></a>
 <a name="512"><span class="lineNum">     512 </span>                :            :           _M_t._M_insert_unique(__x);</a>
-<a name="513"><span class="lineNum">     513 </span>                :<span class="lineCov">          2 :         return std::pair&lt;iterator, bool&gt;(__p.first, __p.second);</span></a>
+<a name="513"><span class="lineNum">     513 </span>                :<span class="lineNoCov">          0 :         return std::pair&lt;iterator, bool&gt;(__p.first, __p.second);</span></a>
 <a name="514"><span class="lineNum">     514 </span>                :            :       }</a>
 <a name="515"><span class="lineNum">     515 </span>                :            : </a>
 <a name="516"><span class="lineNum">     516 </span>                :            : #if __cplusplus &gt;= 201103L</a>

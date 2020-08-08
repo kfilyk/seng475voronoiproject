@@ -31,18 +31,18 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">18</td>
+            <td class="headerCovTableEntry">14</td>
             <td class="headerCovTableEntry">65</td>
-            <td class="headerCovTableEntryLo">27.7 %</td>
+            <td class="headerCovTableEntryLo">21.5 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2020-07-07 12:01:38</td>
+            <td class="headerValue">2020-07-07 20:06:46</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">7</td>
+            <td class="headerCovTableEntry">5</td>
             <td class="headerCovTableEntry">33</td>
-            <td class="headerCovTableEntryLo">21.2 %</td>
+            <td class="headerCovTableEntryLo">15.2 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -318,12 +318,12 @@
 <a name="240"><span class="lineNum">     240 </span>                :            :       // requires special behaviour if _InIterator is an integral type</a>
 <a name="241"><span class="lineNum">     241 </span>                :            :       template&lt;typename _InIterator&gt;</a>
 <a name="242"><span class="lineNum">     242 </span>                :            :         void</a>
-<a name="243"><span class="lineNum">     243 </span>                :<span class="lineCov">        127 :         _M_construct_aux(_InIterator __beg, _InIterator __end,</span></a>
+<a name="243"><span class="lineNum">     243 </span>                :<span class="lineCov">        112 :         _M_construct_aux(_InIterator __beg, _InIterator __end,</span></a>
 <a name="244"><span class="lineNum">     244 </span>                :            :                          std::__false_type)</a>
 <a name="245"><span class="lineNum">     245 </span>                :            :         {</a>
 <a name="246"><span class="lineNum">     246 </span>                :            :           typedef typename iterator_traits&lt;_InIterator&gt;::iterator_category _Tag;</a>
-<a name="247"><span class="lineNum">     247 </span>        [<span class="branchCov" title="Branch 0 was taken 127 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        127 :           _M_construct(__beg, __end, _Tag());</span></a>
-<a name="248"><span class="lineNum">     248 </span>                :<span class="lineCov">        127 :         }</span></a>
+<a name="247"><span class="lineNum">     247 </span>        [<span class="branchCov" title="Branch 0 was taken 112 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        112 :           _M_construct(__beg, __end, _Tag());</span></a>
+<a name="248"><span class="lineNum">     248 </span>                :<span class="lineCov">        112 :         }</span></a>
 <a name="249"><span class="lineNum">     249 </span>                :            : </a>
 <a name="250"><span class="lineNum">     250 </span>                :            :       // _GLIBCXX_RESOLVE_LIB_DEFECTS</a>
 <a name="251"><span class="lineNum">     251 </span>                :            :       // 438. Ambiguity in the &quot;do the right thing&quot; clause</a>
@@ -338,11 +338,11 @@
 <a name="260"><span class="lineNum">     260 </span>                :            : </a>
 <a name="261"><span class="lineNum">     261 </span>                :            :       template&lt;typename _InIterator&gt;</a>
 <a name="262"><span class="lineNum">     262 </span>                :            :         void</a>
-<a name="263"><span class="lineNum">     263 </span>                :<span class="lineCov">        127 :         _M_construct(_InIterator __beg, _InIterator __end)</span></a>
+<a name="263"><span class="lineNum">     263 </span>                :<span class="lineCov">        112 :         _M_construct(_InIterator __beg, _InIterator __end)</span></a>
 <a name="264"><span class="lineNum">     264 </span>                :            :         {</a>
 <a name="265"><span class="lineNum">     265 </span>                :            :           typedef typename std::__is_integer&lt;_InIterator&gt;::__type _Integral;</a>
-<a name="266"><span class="lineNum">     266 </span>                :<span class="lineCov">        127 :           _M_construct_aux(__beg, __end, _Integral());</span></a>
-<a name="267"><span class="lineNum">     267 </span>                :<span class="lineCov">        127 :         }</span></a>
+<a name="266"><span class="lineNum">     266 </span>                :<span class="lineCov">        112 :           _M_construct_aux(__beg, __end, _Integral());</span></a>
+<a name="267"><span class="lineNum">     267 </span>                :<span class="lineCov">        112 :         }</span></a>
 <a name="268"><span class="lineNum">     268 </span>                :            : </a>
 <a name="269"><span class="lineNum">     269 </span>                :            :       // For Input Iterators, used in istreambuf_iterators, etc.</a>
 <a name="270"><span class="lineNum">     270 </span>                :            :       template&lt;typename _InIterator&gt;</a>
@@ -600,10 +600,10 @@
 <a name="522"><span class="lineNum">     522 </span>                :            :       // 3076. basic_string CTAD ambiguity</a>
 <a name="523"><span class="lineNum">     523 </span>                :            :       template&lt;typename = _RequireAllocator&lt;_Alloc&gt;&gt;</a>
 <a name="524"><span class="lineNum">     524 </span>                :            : #endif</a>
-<a name="525"><span class="lineNum">     525 </span>                :<span class="lineCov">        127 :       basic_string(const _CharT* __s, const _Alloc&amp; __a = _Alloc())</span></a>
-<a name="526"><span class="lineNum">     526 </span>                :<span class="lineCov">        127 :       : _M_dataplus(_M_local_data(), __a)</span></a>
-<a name="527"><span class="lineNum">     527 </span>  [<span class="branchCov" title="Branch 0 was taken 127 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 127 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        127 :       { _M_construct(__s, __s ? __s + traits_type::length(__s) : __s+npos); }</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 127 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
+<a name="525"><span class="lineNum">     525 </span>                :<span class="lineCov">        112 :       basic_string(const _CharT* __s, const _Alloc&amp; __a = _Alloc())</span></a>
+<a name="526"><span class="lineNum">     526 </span>                :<span class="lineCov">        112 :       : _M_dataplus(_M_local_data(), __a)</span></a>
+<a name="527"><span class="lineNum">     527 </span>  [<span class="branchCov" title="Branch 0 was taken 112 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 112 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        112 :       { _M_construct(__s, __s ? __s + traits_type::length(__s) : __s+npos); }</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 112 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
 <a name="528"><span class="lineNum">     528 </span>                :            : </a>
 <a name="529"><span class="lineNum">     529 </span>                :            :       /**</a>
 <a name="530"><span class="lineNum">     530 </span>                :            :        *  @brief  Construct string as multiple characters.</a>
@@ -616,9 +616,9 @@
 <a name="537"><span class="lineNum">     537 </span>                :            :       // 3076. basic_string CTAD ambiguity</a>
 <a name="538"><span class="lineNum">     538 </span>                :            :       template&lt;typename = _RequireAllocator&lt;_Alloc&gt;&gt;</a>
 <a name="539"><span class="lineNum">     539 </span>                :            : #endif</a>
-<a name="540"><span class="lineNum">     540 </span>                :<span class="lineCov">          3 :       basic_string(size_type __n, _CharT __c, const _Alloc&amp; __a = _Alloc())</span></a>
-<a name="541"><span class="lineNum">     541 </span>                :<span class="lineCov">          3 :       : _M_dataplus(_M_local_data(), __a)</span></a>
-<a name="542"><span class="lineNum">     542 </span>        [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          3 :       { _M_construct(__n, __c); }</span></a>
+<a name="540"><span class="lineNum">     540 </span>                :<span class="lineCov">          1 :       basic_string(size_type __n, _CharT __c, const _Alloc&amp; __a = _Alloc())</span></a>
+<a name="541"><span class="lineNum">     541 </span>                :<span class="lineCov">          1 :       : _M_dataplus(_M_local_data(), __a)</span></a>
+<a name="542"><span class="lineNum">     542 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          1 :       { _M_construct(__n, __c); }</span></a>
 <a name="543"><span class="lineNum">     543 </span>                :            : </a>
 <a name="544"><span class="lineNum">     544 </span>                :            : #if __cplusplus &gt;= 201103L</a>
 <a name="545"><span class="lineNum">     545 </span>                :            :       /**</a>
@@ -6251,9 +6251,9 @@
 <a name="6172"><span class="lineNum">    6172 </span>                :            :    */</a>
 <a name="6173"><span class="lineNum">    6173 </span>                :            :   template&lt;typename _CharT, typename _Traits, typename _Alloc&gt;</a>
 <a name="6174"><span class="lineNum">    6174 </span>                :            :     inline bool</a>
-<a name="6175"><span class="lineNum">    6175 </span>                :<span class="lineCov">         26 :     operator==(const basic_string&lt;_CharT, _Traits, _Alloc&gt;&amp; __lhs,</span></a>
+<a name="6175"><span class="lineNum">    6175 </span>                :<span class="lineNoCov">          0 :     operator==(const basic_string&lt;_CharT, _Traits, _Alloc&gt;&amp; __lhs,</span></a>
 <a name="6176"><span class="lineNum">    6176 </span>                :            :                const _CharT* __rhs)</a>
-<a name="6177"><span class="lineNum">    6177 </span>                :<span class="lineCov">         26 :     { return __lhs.compare(__rhs) == 0; }</span></a>
+<a name="6177"><span class="lineNum">    6177 </span>                :<span class="lineNoCov">          0 :     { return __lhs.compare(__rhs) == 0; }</span></a>
 <a name="6178"><span class="lineNum">    6178 </span>                :            : </a>
 <a name="6179"><span class="lineNum">    6179 </span>                :            :   // operator !=</a>
 <a name="6180"><span class="lineNum">    6180 </span>                :            :   /**</a>
@@ -6289,9 +6289,9 @@
 <a name="6210"><span class="lineNum">    6210 </span>                :            :    */</a>
 <a name="6211"><span class="lineNum">    6211 </span>                :            :   template&lt;typename _CharT, typename _Traits, typename _Alloc&gt;</a>
 <a name="6212"><span class="lineNum">    6212 </span>                :            :     inline bool</a>
-<a name="6213"><span class="lineNum">    6213 </span>                :<span class="lineCov">          8 :     operator!=(const basic_string&lt;_CharT, _Traits, _Alloc&gt;&amp; __lhs,</span></a>
+<a name="6213"><span class="lineNum">    6213 </span>                :<span class="lineNoCov">          0 :     operator!=(const basic_string&lt;_CharT, _Traits, _Alloc&gt;&amp; __lhs,</span></a>
 <a name="6214"><span class="lineNum">    6214 </span>                :            :                const _CharT* __rhs)</a>
-<a name="6215"><span class="lineNum">    6215 </span>                :<span class="lineCov">          8 :     { return !(__lhs == __rhs); }</span></a>
+<a name="6215"><span class="lineNum">    6215 </span>                :<span class="lineNoCov">          0 :     { return !(__lhs == __rhs); }</span></a>
 <a name="6216"><span class="lineNum">    6216 </span>                :            : </a>
 <a name="6217"><span class="lineNum">    6217 </span>                :            :   // operator &lt;</a>
 <a name="6218"><span class="lineNum">    6218 </span>                :            :   /**</a>

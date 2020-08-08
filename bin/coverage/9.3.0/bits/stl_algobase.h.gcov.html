@@ -31,18 +31,18 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">12</td>
+            <td class="headerCovTableEntry">10</td>
             <td class="headerCovTableEntry">134</td>
-            <td class="headerCovTableEntryLo">9.0 %</td>
+            <td class="headerCovTableEntryLo">7.5 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2020-07-07 12:01:38</td>
+            <td class="headerValue">2020-07-07 20:06:46</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">15</td>
-            <td class="headerCovTableEntry">196</td>
-            <td class="headerCovTableEntryLo">7.7 %</td>
+            <td class="headerCovTableEntry">8</td>
+            <td class="headerCovTableEntry">198</td>
+            <td class="headerCovTableEntryLo">4.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -273,14 +273,14 @@
 <a name="195"><span class="lineNum">     195 </span>                :            :   template&lt;typename _Tp&gt;</a>
 <a name="196"><span class="lineNum">     196 </span>                :            :     _GLIBCXX14_CONSTEXPR</a>
 <a name="197"><span class="lineNum">     197 </span>                :            :     inline const _Tp&amp;</a>
-<a name="198"><span class="lineNum">     198 </span>                :<span class="lineCov">        204 :     min(const _Tp&amp; __a, const _Tp&amp; __b)</span></a>
+<a name="198"><span class="lineNum">     198 </span>                :<span class="lineCov">        166 :     min(const _Tp&amp; __a, const _Tp&amp; __b)</span></a>
 <a name="199"><span class="lineNum">     199 </span>                :            :     {</a>
 <a name="200"><span class="lineNum">     200 </span>                :            :       // concept requirements</a>
 <a name="201"><span class="lineNum">     201 </span>                :            :       __glibcxx_function_requires(_LessThanComparableConcept&lt;_Tp&gt;)</a>
 <a name="202"><span class="lineNum">     202 </span>                :            :       //return __b &lt; __a ? __b : __a;</a>
-<a name="203"><span class="lineNum">     203 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 203 times"> + </span>]:<span class="lineCov">        204 :       if (__b &lt; __a)</span></a>
+<a name="203"><span class="lineNum">     203 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 165 times"> + </span>]:<span class="lineCov">        166 :       if (__b &lt; __a)</span></a>
 <a name="204"><span class="lineNum">     204 </span>                :<span class="lineCov">          1 :         return __b;</span></a>
-<a name="205"><span class="lineNum">     205 </span>                :<span class="lineCov">        203 :       return __a;</span></a>
+<a name="205"><span class="lineNum">     205 </span>                :<span class="lineCov">        165 :       return __a;</span></a>
 <a name="206"><span class="lineNum">     206 </span>                :            :     }</a>
 <a name="207"><span class="lineNum">     207 </span>                :            : </a>
 <a name="208"><span class="lineNum">     208 </span>                :            :   /**</a>
@@ -297,14 +297,14 @@
 <a name="219"><span class="lineNum">     219 </span>                :            :   template&lt;typename _Tp&gt;</a>
 <a name="220"><span class="lineNum">     220 </span>                :            :     _GLIBCXX14_CONSTEXPR</a>
 <a name="221"><span class="lineNum">     221 </span>                :            :     inline const _Tp&amp;</a>
-<a name="222"><span class="lineNum">     222 </span>                :<span class="lineCov">        101 :     max(const _Tp&amp; __a, const _Tp&amp; __b)</span></a>
+<a name="222"><span class="lineNum">     222 </span>                :<span class="lineCov">         82 :     max(const _Tp&amp; __a, const _Tp&amp; __b)</span></a>
 <a name="223"><span class="lineNum">     223 </span>                :            :     {</a>
 <a name="224"><span class="lineNum">     224 </span>                :            :       // concept requirements</a>
 <a name="225"><span class="lineNum">     225 </span>                :            :       __glibcxx_function_requires(_LessThanComparableConcept&lt;_Tp&gt;)</a>
 <a name="226"><span class="lineNum">     226 </span>                :            :       //return  __a &lt; __b ? __b : __a;</a>
-<a name="227"><span class="lineNum">     227 </span>        [<span class="branchCov" title="Branch 0 was taken 45 times"> + </span><span class="branchCov" title="Branch 1 was taken 56 times"> + </span>]:<span class="lineCov">        101 :       if (__a &lt; __b)</span></a>
-<a name="228"><span class="lineNum">     228 </span>                :<span class="lineCov">         45 :         return __b;</span></a>
-<a name="229"><span class="lineNum">     229 </span>                :<span class="lineCov">         56 :       return __a;</span></a>
+<a name="227"><span class="lineNum">     227 </span>        [<span class="branchCov" title="Branch 0 was taken 33 times"> + </span><span class="branchCov" title="Branch 1 was taken 49 times"> + </span>]:<span class="lineCov">         82 :       if (__a &lt; __b)</span></a>
+<a name="228"><span class="lineNum">     228 </span>                :<span class="lineCov">         33 :         return __b;</span></a>
+<a name="229"><span class="lineNum">     229 </span>                :<span class="lineCov">         49 :       return __a;</span></a>
 <a name="230"><span class="lineNum">     230 </span>                :            :     }</a>
 <a name="231"><span class="lineNum">     231 </span>                :            : </a>
 <a name="232"><span class="lineNum">     232 </span>                :            :   /**</a>
@@ -355,9 +355,9 @@
 <a name="277"><span class="lineNum">     277 </span>                :            :   // remove the __normal_iterator wrapper. See copy, fill, ...</a>
 <a name="278"><span class="lineNum">     278 </span>                :            :   template&lt;typename _Iterator&gt;</a>
 <a name="279"><span class="lineNum">     279 </span>                :            :     inline _Iterator</a>
-<a name="280"><span class="lineNum">     280 </span>                :<span class="lineCov">        600 :     __niter_base(_Iterator __it)</span></a>
+<a name="280"><span class="lineNum">     280 </span>                :<span class="lineCov">        486 :     __niter_base(_Iterator __it)</span></a>
 <a name="281"><span class="lineNum">     281 </span>                :            :     _GLIBCXX_NOEXCEPT_IF(std::is_nothrow_copy_constructible&lt;_Iterator&gt;::value)</a>
-<a name="282"><span class="lineNum">     282 </span>                :<span class="lineCov">        600 :     { return __it; }</span></a>
+<a name="282"><span class="lineNum">     282 </span>                :<span class="lineCov">        486 :     { return __it; }</span></a>
 <a name="283"><span class="lineNum">     283 </span>                :            : </a>
 <a name="284"><span class="lineNum">     284 </span>                :            :   // Reverse the __niter_base transformation to get a</a>
 <a name="285"><span class="lineNum">     285 </span>                :            :   // __normal_iterator back again (this assumes that __normal_iterator</a>
@@ -1103,8 +1103,8 @@
 <a name="1025"><span class="lineNum">    1025 </span>                :            :   { return (int)sizeof(int) * __CHAR_BIT__  - 1 - __builtin_clz(__n); }</a>
 <a name="1026"><span class="lineNum">    1026 </span>                :            : </a>
 <a name="1027"><span class="lineNum">    1027 </span>                :            :   inline _GLIBCXX_CONSTEXPR long</a>
-<a name="1028"><span class="lineNum">    1028 </span>                :<span class="lineCov">          1 :   __lg(long __n)</span></a>
-<a name="1029"><span class="lineNum">    1029 </span>                :<span class="lineCov">          1 :   { return (int)sizeof(long) * __CHAR_BIT__ - 1 - __builtin_clzl(__n); }</span></a>
+<a name="1028"><span class="lineNum">    1028 </span>                :<span class="lineNoCov">          0 :   __lg(long __n)</span></a>
+<a name="1029"><span class="lineNum">    1029 </span>                :<span class="lineNoCov">          0 :   { return (int)sizeof(long) * __CHAR_BIT__ - 1 - __builtin_clzl(__n); }</span></a>
 <a name="1030"><span class="lineNum">    1030 </span>                :            : </a>
 <a name="1031"><span class="lineNum">    1031 </span>                :            :   inline _GLIBCXX_CONSTEXPR unsigned long</a>
 <a name="1032"><span class="lineNum">    1032 </span>                :            :   __lg(unsigned long __n)</a>

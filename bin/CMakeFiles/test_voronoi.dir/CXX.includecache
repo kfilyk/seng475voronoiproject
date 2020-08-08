@@ -6,19 +6,3 @@
 
 #IncludeRegexTransform: 
 
-/home/jdoe/Desktop/project/app/test_voronoi.cpp
-catch2/catch.hpp
--
-../include/graph.hpp
-/home/jdoe/Desktop/project/include/graph.hpp
-CGAL/Exact_predicates_inexact_constructions_kernel.h
--
-
-/home/jdoe/Desktop/project/include/graph.hpp
-iostream
--
-CGAL/Simple_cartesian.h
--
-CGAL/Exact_predicates_inexact_constructions_kernel.h
--
-
