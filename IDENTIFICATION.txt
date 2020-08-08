@@ -1,0 +1,7 @@
+name "Eric Rojo and Kelvin Filyk"
+student_id "V00855483"
+email "ericrojo@uvic.ca"
+term "2020-05"
+course "SENG475"
+section "T01"
+assignment "cpp_project"
