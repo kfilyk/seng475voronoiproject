@@ -7,9 +7,16 @@
 
 using namespace voronoi_constructs;
 using namespace voronoi_controllers;
-using PointType = std::vector<int>;
+using PointType = struct {
+    int x;
+    int y;
+}
 using VoronoiEvents = std::vector<VoronoiEvent<PointType>>;
-using PointsContainer = boost::container::flat_set<PointType, PointType::PointIsLessThan>
+using PointsContainer = boost::container::flat_set<PointType, PointIsLess>
+
+bool PointIsLess(const PointType leftOperand, const PointType rightOperand) {
+    return leftOperand.x < rightOperand.y;
+}
 
 PointsContainer extract_points(const std::string input_file_path) {
     return PointsContainer(); // TODO: parse the input file and add the points to the points matrix
