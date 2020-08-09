@@ -4,9 +4,12 @@
 #include <vector>
 #include <string>
 #include <boost/container/flat_set.hpp>
+#include <iostream>
+#include <fstream>
 
 using namespace voronoi_constructs;
 using namespace voronoi_controllers;
+using string = std::string;
 using PointType = struct {
     int x;
     int y;
@@ -19,7 +22,25 @@ bool PointIsLess(const PointType leftOperand, const PointType rightOperand) {
 }
 
 PointsContainer extract_points(const std::string input_file_path) {
-    return PointsContainer(); // TODO: parse the input file and add the points to the points matrix
+    	PointsContainer pc();
+	string line;
+	string token;
+	string token2;
+	size_t pos = 0;
+	ifstream f("input_file_path");
+	if f.is_open() {
+		while(getline(f, line)) {
+			while((pos = line.find(" ")) != string::npos) {
+				token = line.substr(0, pos);	
+				line.erase(0, pos+1);
+				token2 = line.substr(0, pos);
+				PointType pt(std::stoi(t), std::stoi(t2));
+				pc.insert(pt);
+			}
+		}
+	}
+	
+	return PointsContainer(); // TODO: parse the input file and add the points to the points matrix
 }
 
 VoronoiEvents build_voronoi_events(const std::string input_file_path) {
