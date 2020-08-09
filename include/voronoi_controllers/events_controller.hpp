@@ -1,4 +1,4 @@
-#include "constructs/voronoi_event.hpp"
+#include "voronoi_constructs/voronoi_event.hpp"
 
 using namespace voronoi_constructs;
 

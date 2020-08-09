@@ -1,5 +1,5 @@
-#include "constructs/voronoi_event.hpp"
-#include "controllers/events_controller.hpp"
+#include "voronoi_constructs/voronoi_event.hpp"
+#include "voronoi_controllers/events_controller.hpp"
 #include <stdlib.h>
 #include <vector>
 #include <string>
