@@ -1,4 +1,3 @@
-
 namespace voronoi_constructs {
     template <class Point>
     class Edge {
@@ -8,6 +7,7 @@ namespace voronoi_constructs {
             Edge(): src_point(0, 0), dest_point(0, 0) {}
             Edge(Point src, Point dest) : src_point(src), dest_point(dest) {}
             Point intersection_point(Edge other) {
+		double A = src
                 return Point(); // TODO: actually do something in this method
             }
             void grow(Point diff) {
