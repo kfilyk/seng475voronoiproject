@@ -10,4 +10,5 @@ namespace voronoi_constructs {
         private:
             PointsContainer points;
     };
+    
 }
