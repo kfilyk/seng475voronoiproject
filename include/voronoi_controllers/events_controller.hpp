@@ -7,8 +7,9 @@ namespace voronoi_controllers {
     class EventsController {
         public:
             Beachline beachline;
+            VoronoiGraph voronoi_graph;
             EventsController() : beachline() {}
-            void handle_event(VoronoiEvent<Point> event) {
+            void handle_event(const VoronoiEvent<Point> event) {
                 switch (event.type) {
                     case VoronoiEventType::SITE:
                         beachline.add(event.site_point);

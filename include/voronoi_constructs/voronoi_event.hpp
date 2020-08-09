@@ -1,4 +1,3 @@
-
 namespace voronoi_constructs {
     enum VoronoiEventType {
         SITE,
@@ -6,7 +5,9 @@ namespace voronoi_constructs {
     };
     template <class Point>
     class VoronoiEvent {
-        VoronoiEventType type;
-        VoronoiEvent(VoronoiEventType type) : type(type) {}
+        public:
+            const VoronoiEventType type;
+            const Point point;
+            VoronoiEvent(const VoronoiEventType type, const Point point) : type(type), point(point) {}
     };
 }
