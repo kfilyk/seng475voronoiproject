@@ -2,8 +2,9 @@
 
 namespace voronoi_constructs {
     class Point {
-        int x();
-        int y();
+        using Coord = int;
+        Coord x();
+        Coord y();
     };
     bool LessOnBeachline(const BeachlineItem left, const BeachlineItem right) {
         return left.isLessThan(right);
