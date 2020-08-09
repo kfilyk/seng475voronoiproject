@@ -10,14 +10,7 @@ namespace voronoi_controllers {
             VoronoiGraph voronoi_graph;
             EventsController() : beachline() {}
             void handle_event(const VoronoiEvent<Point> event) {
-                switch (event.type) {
-                    case VoronoiEventType::SITE:
-                        beachline.add(event.site_point);
-                        break;
-                    case VoronoiEventType::EDGE_INTERSECTION:
-                        beachline.remove(event.site_point);
-                        break;
-                }
+                beachline.add(event);
             }
     };
 }
