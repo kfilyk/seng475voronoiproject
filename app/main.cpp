@@ -22,12 +22,21 @@ bool PointIsLess(const PointType leftOperand, const PointType rightOperand) {
 }
 
 PointsContainer extract_points(const std::string input_file_path) {
-    	string line;
-	string token;
+    	PointsContainer pc(std::iterator, PointIsLess);
+	string line;
+	string t2;
+	string t2;
+	size_t pos = 0;
 	ifstream f("input_file_path");
 	if f.is_open() {
 		while(getline(f, line)) {
-			token = line.substr(0, line.find(" "));						std::cout << token <<"\n";
+			while((pos = line.find(" ")) != string::npos) {
+				t = line.substr(0, pos);	
+				line.erase(0, pos+1);
+				t2 = line.substr(0, pos);
+				PointType pt(std::stoi(t), std::stoi(t2));
+				pc.insert(pt);
+			}
 		}
 	}
 	
