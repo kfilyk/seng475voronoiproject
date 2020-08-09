@@ -1,8 +1,14 @@
-
 namespace voronoi_constructs {
+    template<class Point>
     class Beachline {
-    	double pos; // position
-    	double increment; // how much to update position every iteration	
+        using PointsContainer = boost::container::flat_set<BeachLineItem, BeachlineItem.IsLessThan>;
+        public:
+            Beachline() {}
+            add(BeachlineItem item) {
+                points.insert(item);
+            }
+        private:
+            PointsContainer points;
     };
     
 }
