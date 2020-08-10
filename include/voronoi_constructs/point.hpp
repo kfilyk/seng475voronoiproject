@@ -6,8 +6,8 @@ namespace voronoi_constructs {
         Coord x();
         Coord y();
     };
-    bool LessOnBeachline(const BeachlineItem left, const BeachlineItem right) {
+    bool x_is_less(const BeachlineItem left, const BeachlineItem right) {
         return left.isLessThan(right);
     }
-    using PointsContainer = boost::container::flat_set<Point, LessOnBeachline>;
+    using PointsContainer = boost::container::flat_set<Point, x_is_less>;
 }

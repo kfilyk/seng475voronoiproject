@@ -3,19 +3,21 @@
 namespace voronoi_constructs {
     class Arc {
         public:
-            Arc(const Point focus, const Edge left_edge, const Edge right_edge, const Point::Coord sweepline_y) : focus(focus), left_edge(left_edge), right_edge(right_edge), directrix(sweepline_y - focus.x()) {}
+            Arc(const Point focus)
+                : focus(focus) {}
             bool operator<(const Arc other) {
                 return LessOnBeachline(*this, other);
             }
             bool operator==(const Arc other) {
                 return !(*this < other) && !(other < *this);
             }
-            Point ComputeIntersection(Arc other) {
-                //TODO: figure out how to comput the intersection(s) between two parabola arcs
+            Point::Coord compute_y(Point::Coord x, Point::Coord directrix) {
+                return (((x - focus.x()) * (x - focus.x()))/(2*(focus.y() - directrix))) + ((focus.y() + directrix)/2);
+            }
+            bool focus_is_less(Arc other) {
+                return focus.x() < other.x();
             }
         private:
             Point focus;
-            Edge left_edge;
-            Edge right_edge;
     }
 }

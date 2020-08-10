@@ -4,8 +4,8 @@ namespace voronoi_constructs {
         public:
             Point src_point;
             Point dest_point;
-            Edge(): src_point(0, 0), dest_point(0, 0) {}
-            Edge(Point src, Point dest) : src_point(src), dest_point(dest) {}
+            Edge(std::vector<int> unit_vector): unit_vector(unit_vector), src_point(0, 0), dest_point(0, 0) {}
+            Edge(std::vector<int> unit_vector, Point src, Point dest) : unit_vector(unit_vector), src_point(src), dest_point(dest) {}
             Point intersection_point(Edge other) {
                 return Point(); // TODO: actually do something in this method
             }

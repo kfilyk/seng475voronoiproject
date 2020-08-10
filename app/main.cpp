@@ -2,6 +2,8 @@
 #include <vector>
 #include <string>
 #include "voronoi_constructs/point.hpp"
+#include "voronoi_constructs/beachline.hpp"
+
 using namespace voronoi_constructs;
 
 PointsContainer extract_points(const std::string input_file_path) {
@@ -31,6 +33,6 @@ int main() {
     PointsContainer points = extract_points(input_file_path);
     Beachline beachline;
     for (auto point : points) {
-        beachline.add(BeachlineItem(BeachlineItemType.ARC, point));
+        beachline.add_site(point)
     }
 }
