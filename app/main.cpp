@@ -24,15 +24,16 @@ PointsContainer extract_points(const std::string input_file_path) {
 			}
 		}
 	}
-	
 	return points;
 }
 
 int main() {
     const std::string input_file_path = "input_file.txt";
     PointsContainer points = extract_points(input_file_path);
+    VoronoiGraph* voronoi_graph = new VoronoiGraph();
     Beachline beachline;
     for (auto point : points) {
-        beachline.add_site(point)
+        beachline.add_site(point);
+        beachline.process_ray_intersections(voronoi_graph);
     }
 }

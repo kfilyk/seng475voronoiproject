@@ -3,6 +3,7 @@
 namespace voronoi_constructs {
     class Point {
         using Coord = int;
+        Point(Coord x, Coord y) : x(x), y(y) {}
         Coord x();
         Coord y();
     };
