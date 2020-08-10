@@ -7,31 +7,38 @@ namespace voronoi_constructs {
     class Beachline {
         using ArcsContainer arcs_container = boost::container::flat_set<Arc, Arc.focus_is_less>;
         public:
-            Beachline() {}
+            Beachline() : arcs_container() {}
             std::vector<Arc*> get_arcs_at_position(Point::Coord x, Point::Coord sweepline) {
-                arcs_container.insert(Arc(Point(x, sweepline)));
-                ArcContainer::iterator pointer_to_position_on_beachline = arcs_container.insert(x);
+                // TODO: handle corner cases: where no arcs (or less than three arcs) are in the beachline
+                arcs_container.insert(Arc(Point(x, sweepline))); // breaks algorithm if this happens to insert before existing arc at this position?
+                ArcContainer::iterator pointer_to_position_on_beachline = arcs_container.find(x);
                 Arc* left_arc_ptr = pointer_to_position_on_beachline - 1;
                 Arc* right_arc_ptr = pointer_to_position_on_beachline + 1;
-                arcs_container.remove(pointer_to_position_on_beachline);
                 Point::Coord left_arc_y = left_arc->compute_y(x, sweepline);
                 Point::Coord right_arc_y = right_arc->compute_y(x, sweepline);
+                std::vector<Arc*> result;
                 if (left_arc_y > right_arc_y) {
-                    return std::vector<Arc*>(left_arc_ptr);
+                    result = std::vector<Arc*>(left_arc_ptr);
+                    arcs_container.remove(pointer_to_position_on_beachline);
                 } else if (left_arc_y < right_arc_y) {
-                    return std::vector<Arc*>(right_arc_ptr);
-                } else { // condition where the given x coordinate occurs at an intersection point between two arcs
-                    return std::vector<Arc*>{left_arc_ptr, right_arc_ptr};
+                    result = std::vector<Arc*>(right_arc_ptr);
+                    arcs_container.remove(pointer_to_position_on_beachline);
+                } else { // condition where the given x coordinate occurs at an intersection point between two growing edges (ie. shared by left arc, disappearing arc, and right arc)
+                    // flaw: what happens if x is at a growing edge tip? then there's only left and right arc intersection, and the disappearing arc was removed in a previous sweepline state
+                    result = std::vector<Arc*>{left_arc_ptr, pointer_to_position_on_beachline, right_arc_ptr};
                 }
+                return result;
             }
             void add_site(Point point) {
                 std::vector<Arc*> arcs_ptrs = get_arcs_at_position(point.x(), point.y());
-                const Point::Coord left_side_tangent = arcs_ptrs[0]->tangent_slope(point.x());
-                const Point::Coord right_side_tangent = arcs_ptrs.size() > 1 ?
-                    arcs_ptrs[1]->tangent_slope(point.x())
-                    : Point::Coord(left_side_tangent);
-                Ray left_ray = Ray(point, left_side_tangent, Ray::Direction.LEFT);
-                Ray right_ray = Ray(point, right_side_tangent, Ray::Direction.RIGHT);
+                Arc left_arc = *(arcs_ptrs[0]);
+                const Point::Coord left_side_tangent = left_arc.tangent_slope(point.x(), point.y());
+                Arc right_arc = arcs_ptrs.size() > 1 ? *(arc_ptrs[1]) : Arc(left_arc);
+                const Point::Coord right_side_tangent = right_arc.tangent_slope(point.x(), point.y());
+                Point::Coord left_ray_source = Point(point.x(), left_arc.compute_y(point.x(), point.y()));
+                Point::Coord right_ray_source = Point(point.x(), right_arc.compute_y(point.x(), point.y()));
+                Ray left_ray = Ray(left_ray_source, left_side_tangent, Ray::Direction.LEFT);
+                Ray right_ray = Ray(right_ray_source, right_side_tangent, Ray::Direction.RIGHT);
                 Arc new_arc = Arc(point, left_ray, right_ray);
                 arcs_container.insert(new_arc);
             }

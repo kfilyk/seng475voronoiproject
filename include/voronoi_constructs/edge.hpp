@@ -5,12 +5,6 @@ namespace voronoi_constructs {
             Point _src_point;
             Point _dest_point;
             Edge(Point src, Point dest) : _src_point(src), _dest_point(dest) {}
-            Point intersection_point(Edge other) {
-                return Point(); // TODO: actually do something in this method
-            }
-            void grow(Point diff) {
-                dest_point = dest_point(dest_point + diff);
-            }
             Point source() {
                 return Point(_src_point);
             }
