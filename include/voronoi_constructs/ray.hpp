@@ -1,5 +1,5 @@
 #include "voronoi_constructs/point.hpp"
-
+#include "voronoi_constructs/edge.hpp"
 namespace voronoi_constructs {
     class Ray {
         public:
@@ -18,6 +18,10 @@ namespace voronoi_constructs {
                     case Direction.RIGHT;
                         return Edge(source, source + diff);
                 }
+            }
+            static Ray perpendicular_to(Edge edge) {
+                Point::Coord perpendicular_slope = -(1/edge.slope());
+                return Ray(edge.middle_point(), perpendicular_slope);
             }
         private:
             Point source;

@@ -34,6 +34,6 @@ int main() {
     Beachline beachline;
     for (auto point : points) {
         beachline.add_site(point);
-        beachline.process_ray_intersections(voronoi_graph);
+        beachline.process_ray_intersections(voronoi_graph, point.y());
     }
 }
