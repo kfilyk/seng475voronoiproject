@@ -33,8 +33,8 @@ int main() {
     VoronoiGraph* voronoi_graph = new VoronoiGraph();
     Beachline beachline;
     for (auto point : points) {
-        beachline.add_site(point);
 		// make sure all intersection events that should have occured since the previous site event are processed here, AT THE POSITION that they would have occurred before this site event loop iteration
         beachline.process_ray_intersections(voronoi_graph, point.y());
+        beachline.add_site(point);
     }
 }
