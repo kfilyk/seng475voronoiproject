@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <vector>
+#include <map>
 #include <string>
 #include "voronoi_constructs/point.hpp"
 #include "voronoi_constructs/beachline.hpp"
@@ -32,9 +33,15 @@ int main() {
     PointsContainer points = extract_points(input_file_path);
     VoronoiGraph* voronoi_graph = new VoronoiGraph();
     Beachline beachline;
-    for (auto point : points) {
+	std::map<Point::Coord, std::vector<Point>> sweepline_map;
+	for (auto point : points) {
+		sweepline_map[point.y()].push_back(point);
+	}
+    for (auto y_key_vals : sweepline_map) {
+		Point::Coord y = y_key_vals -> first;
+		std::vector<Point> points_at_y = y_key_vals -> second;
 		// make sure all intersection events that should have occured since the previous site event are processed here, AT THE POSITION that they would have occurred before this site event loop iteration
-        beachline.process_ray_intersections(voronoi_graph, point.y());
-        beachline.add_site(point);
+		beachline.process_ray_intersections(voronoi_graph, y);
+        beachline.add_sites(points_at_y);
     }
 }

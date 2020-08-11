@@ -4,6 +4,7 @@ namespace voronoi_constructs {
         public:
             Point _src_point;
             Point _dest_point;
+            Edge() : _src_point(0), _dest_point(0) {}
             Edge(Point src, Point dest) : _src_point(src), _dest_point(dest) {}
             Point source() {
                 return Point(_src_point);
