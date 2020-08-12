@@ -1,5 +1,5 @@
 namespace voronoi_constructs {
-    template <class Point>
+    template<class Point>
     class Edge {
         public:
             Point _src_point;

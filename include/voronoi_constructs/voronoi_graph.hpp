@@ -1,8 +1,6 @@
 #include <vector>
-#include "voronoi_constructs/edge.hpp"
-#include "voronoi_constructs/point.hpp"
-
-namespace VoronoiConstructs {
+namespace voronoi_constructs {
+    template <class Point>
     class VoronoiGraph {
         public:
             VoronoiGraph() : edges(), vertices() {}
@@ -13,7 +11,7 @@ namespace VoronoiConstructs {
                 vertices.insert(vertices.end(), new_vertices.begin(), new_vertices.end());
             }
         private:
-            std::vector<Edge> edges;
+            std::vector<Edge<Point>> edges;
             std::vector<Point> vertices;
     };
 }
