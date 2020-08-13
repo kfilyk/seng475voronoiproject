@@ -1,28 +1,32 @@
 namespace voronoi_constructs {
-    template <class T>
+    template <class Point>
     class Arc {
-        using Point = T;
         public:
-            using BachelorPointsSet = std::set<Point*, point_comparators::ptr_x_is_less<Point::CoordType>>;
-            BachelorPointsSet bachelor_points;
-            Arc(const Point focus, BachelorPointsSet bachelor_points = BachelorPointsSet()) : bachelor_points() {
-                for (auto ptr : bachelor_points) {
-                    bachelor_points.insert(ptr);
-                }
+            BachelorPoints<Point>::BachelorPointsPtrSet bachelor_points;
+            Arc(const Point focus, BachelorPointsPtrSet bachelor_points = BachelorPointsPtrSet()) : bachelor_points() {
+                add_bachelor_points(bachelor_points);
             }
             Arc(const &Arc<Point> other) : bachelor_points(), _focus(other.get_focus()) {
-                for (auto ptr : other.bachelor_points) {
-                    bachelor_points.insert(ptr);
-                }
+                add_bachelor_points(bachelor_points);
             }
             Arc& operator=(const &Arc<Point> arc) : bachelor_points(), _focus(arc.get_focus()) {
                 if (this != other) {
                     delete[] bachelor_points;
-                    for (auto ptr : other.bachelor_points) {
-                        bachelor_points.insert(ptr);
-                    }
+                    add_bachelor_points(bachelor_points);
                 }
                 return *this;
+            }
+            Point get_focus() {
+                return Point(_focus);
+            }
+            void add_bachelor_points(BachelorPointsPtrSet bachelor_points) {
+                for (auto bachelor_point_ptr : bachelor_points) {
+                    bachelor_points.insert(bachelor_point_ptr);
+                    // give each bachelor point knowledge of which arc owns it, so that they can be used as the source point 
+                    // in completed edges formed in edge intersection events (since intersection events should only have knowledge of
+                    // participating arcs, and are agnostic to bachelor points)
+                    (bachelor_point_ptr->arcs).push_back(this);
+                }
             }
             bool operator<(const Arc<Point> other) {
                 return focus_is_less(other);
@@ -38,9 +42,6 @@ namespace voronoi_constructs {
             }
             bool focus_is_less(const Arc<Point> other) {
                 return _focus.x() < other._focus.x();
-            }
-            Point get_focus() {
-                return Point(_focus);
             }
         private:
             Point _focus;
