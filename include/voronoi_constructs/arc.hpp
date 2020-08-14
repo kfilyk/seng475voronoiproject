@@ -2,7 +2,7 @@ namespace voronoi_constructs {
     template <class Point>
     class Arc {
         public:
-            BachelorPoints<Point>::BachelorPointsPtrSet bachelor_points;
+            BachelorPoint<Point>::BachelorPointsPtrSet bachelor_points;
             Arc(const Point focus, BachelorPointsPtrSet bachelor_points = BachelorPointsPtrSet()) : bachelor_points() {
                 add_bachelor_points(bachelor_points);
             }

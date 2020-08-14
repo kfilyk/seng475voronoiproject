@@ -3,12 +3,21 @@ namespace voronoi_constructs {
     class Point {
         public:
             using CoordType = T;
+            Point() : _x(0), _y(0) {}
             Point(CoordType x, CoordType y) : _x(x), _y(y) {}
             CoordType x() {
                 return CoordType(_x);
             }
             CoordType y() {
                 return CoordType(_y);
+            }
+            CoordType squared_distance_from(Point origin) {
+                Point::CoordType origin_x(origin.x());
+                Point::CoordType origin_y(origin.y());
+                return ((_x - origin_x)*(_x - origin_x)) + ((_y - origin_y)*(_y - origin_y));
+            }
+            bool x_is_less(Point other) {
+                return x() < other.x();
             }
         private:
             CoordType _x;
@@ -18,32 +27,30 @@ namespace voronoi_constructs {
         template<class T>
         class y_is_less {
             public:
-                bool operator()(Point<T> left, Point<T> right) {
+                bool operator()(T left, T right) {
                     return left.y() < right.y();
                 }
         };
         template<class T>
         class y_is_greater {
             public:
-                bool operator()(Point<T> left, Point<T> right) {
+                bool operator()(T left, T right) {
                     return left.y() > right.y();
                 }
         };
         template<class T>
         class x_is_less {
             public:
-                bool operator()(Point<T> left, Point<T> right) {
+                bool operator()(T left, T right) {
                     return left.x() < right.x();
                 }
         };
         template<class T>
         class ptr_x_is_less {
             public:
-                bool operator()(Point<T> left, Point<T> right) {
-                    return (left -> .x()) < (right -> .x());
+                bool operator()(T* left, T* right) {
+                    return (left->x()) < (right ->x());
                 }
         };
     }
-    template<class T>
-    using PointsContainer = std::set<Point<T>, point_comparators::y_is_less<T>>;
 }

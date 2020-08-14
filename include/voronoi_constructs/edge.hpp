@@ -12,7 +12,7 @@ namespace voronoi_constructs {
             Point destination() {
                 return Point(_dest_point);
             }
-            Point slope() {
+            Point::CoordType slope() {
                 return (_dest_point.x() - _src_point.x()) / (_dest_point.y() - _src_point.y());
             }
             Point middle_point() {
@@ -21,16 +21,5 @@ namespace voronoi_constructs {
                     (_dest_point.y() + _src_point.y())/2
                 );
             }
-            Point::CoordType squared_distance_from_origin() {
-                return (_src_point * _src_point) * (_dest_point * _dest_point);
-            }
     };
-    namespace edge_comparator {
-        template <class Point>
-        class has_less_distance_from_origin {
-            bool operator(const Edge<Point> left, const Edge<Point> right) {
-                return left.squared_distance_from_origin() < right.squared_distance_from_origin();
-            }
-        };
-    }
 }
