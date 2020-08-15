@@ -10,19 +10,19 @@
 #include <edge.hpp>
 #include <bachelor_point.hpp>
 #include <ray.hpp>
+#include <voronoi_graph.hpp>
 
 using namespace voronoi_constructs;
 using PointType = Point<int>;
 using Beachline = std::set<Arc<PointType>*, arc_comparators::focus_is_less<PointType>>;
 using ArcsVerticalInterceptsMap = std::map<PointType, Arc<PointType>*, point_comparators::y_is_greater<PointType>>;
-using VoronoiGraph = std::vector<Edge<PointType>>;
 using PointsContainer = std::set<PointType, point_comparators::x_is_less<PointType>>;
 using ArcsPtrSet = std::set<Arc<PointType>*>;
 using DisappearingArcsMap = std::set<Arc<PointType>*, DisappearingArc<PointType>*>; 
 
 Beachline beachline;
 ArcIntersections<PointType>::ArcIntersectionsSet arcs_intersections_set;
-VoronoiGraph voronoi_graph;
+VoronoiGraph<PointType> voronoi_graph;
 DisappearingArcsMap* disappearing_arcs_map;
 
 PointsContainer extract_points(const std::string input_file_path) {
@@ -82,8 +82,8 @@ void process_intersections() {
 		BachelorPoint<PointType>::BachelorPointsPtrSet bachelor_iter = (arc->bachelor_points).begin();
 		BachelorPoint<PointType>* left_intersection_bachelor_point = *bachelor_iter;
 		BachelorPoint<PointType>* right_intersection_bachelor_point = *(++bachelor_iter);
-		voronoi_graph.push_back(Edge<PointType>(left_intersection_bachelor_point->point, *(arc_intersections.left_intersection)));
-		voronoi_graph.push_back(Edge<PointType>(right_intersection_bachelor_point->point, *(arc_intersections.right_intersection)));
+		voronoi_graph.add(Edge<PointType>(left_intersection_bachelor_point->point, *(arc_intersections.left_intersection)));
+		voronoi_graph.add(Edge<PointType>(right_intersection_bachelor_point->point, *(arc_intersections.right_intersection)));
 		free_bachelor_point(left_intersection_bachelor_point);
 		free_bachelor_point(right_intersection_bachelor_point);
 
@@ -177,7 +177,7 @@ void process_unresolved_bachelor_points() {
 			Edge<PointType> arcs_connecting_edge(*neighboring_beachline_arcs, *(neighboring_beachline_arcs + 1));
 			Ray<PointType> perpendicular_ray = Ray<PointType>::perpendicular_to(arcs_connecting_edge);
 			PointType dest_point = perpendicular_ray.closest_intersection_to_boundaries();
-			voronoi_graph.push_back(Edge<PointType>(source_point, dest_point));
+			voronoi_graph.add(Edge<PointType>(source_point, dest_point));
 		}
 	}
 }
