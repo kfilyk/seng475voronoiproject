@@ -2,7 +2,7 @@
 namespace voronoi_constructs {
     template <class Point>
     struct BachelorPoint {
-        using BachelorPointsPtrSet = std::set<BachelorPoint*, bachelor_point_comparators::ptr_bachelor_point_is_less<Point>>;
+        using BachelorPointsPtrSet = std::set<BachelorPoint*, bachelor_point_comparators::ptr_bachelor_point_x_is_less<Point>>;
         Point point;
         ArcsPtrSet participating_beachline_arcs;
         BachelorPoint(Point point, ArcsPtrSet arcs = ArcsPtrSet()) : point(point) {
@@ -44,7 +44,7 @@ namespace voronoi_constructs {
         template<class Point>
         class ptr_bachelor_point_x_is_less {
             public:
-                bool operator()(Point left, Point right) {
+                bool operator()(Point* left, Point* right) {
                     return left->x() < right->x();
                 }
         };

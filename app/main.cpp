@@ -14,11 +14,11 @@
 
 using namespace voronoi_constructs;
 using PointType = Point<int>;
-using Beachline = std::set<Arc<PointType>*, arc_comparators::focus_is_less<PointType>>;
+using Beachline = std::set<Arc<PointType>*, arc_comparators::ptr_focus_is_less<PointType>>;
 using ArcsVerticalInterceptsMap = std::map<PointType, Arc<PointType>*, point_comparators::y_is_greater<PointType>>;
 using PointsContainer = std::set<PointType, point_comparators::x_is_less<PointType>>;
 using ArcsPtrSet = std::set<Arc<PointType>*>;
-using DisappearingArcsMap = std::set<Arc<PointType>*, DisappearingArc<PointType>*>; 
+using DisappearingArcsMap = std::map<Arc<PointType>*, DisappearingArc<PointType>*>; 
 
 Beachline beachline;
 ArcIntersections<PointType>::ArcIntersectionsSet arcs_intersections_set;
@@ -98,7 +98,7 @@ void process_intersections() {
 }
 
 void add_new_arc_intersections(ArcIntersections<PointType> arc_intersections) {
-	ArcIntersections<PointType>* new_arc_intersections = arcs_intersections_set.insert(arc_intersections);
+	ArcIntersections<PointType>* new_arc_intersections = arcs_intersections_set.insert(arc_intersections)->first;
 	if ((new_arc_intersections != arcs_intersections_set.begin()) && (new_arc_intersections != (arcs_intersections_set.end() - 1))) {
 		ArcIntersections<PointType>* left_arc_intersections = new_arc_intersections - 1;
 		ArcIntersections<PointType>* right_arc_intersections = new_arc_intersections + 1;
@@ -132,18 +132,16 @@ void add_new_arc_intersections(ArcIntersections<PointType> arc_intersections) {
 // precondition: all points in the points vector have the same y value, since they are all associated with the same sweepline position
 void process_site_events(PointsContainer points) {
 	PointType::CoordType sweepline_y = points.begin()->y(); 
+	BachelorPoint<PointType>::BachelorPointsPtrSet first_bachelors;
 	for (auto site_focus_point : points) {
 		PointType::CoordType x = site_focus_point.x();
 		ArcsVerticalInterceptsMap arcs_at_x = compute_arcs_at_x(x, sweepline_y);
 		ArcsVerticalInterceptsMap::iterator arcs_at_x_iter = arcs_at_x.begin();
 		PointType first_arc_intersection_point;
-		Arc<PointType>* first_arc;
 		if (arcs_at_x_iter == arcs_at_x.end()) {
 			first_arc_intersection_point = PointType(x, 0);
-			first_arc = nullptr;
 		} else {
 			first_arc_intersection_point = arcs_at_x_iter->first;
-			first_arc = arcs_at_x_iter->second;
 		}
 
 		BachelorPoint<PointType>::BachelorPointsPtrSet bachelor_points {
@@ -156,8 +154,21 @@ void process_site_events(PointsContainer points) {
 		ArcIntersections<PointType> arc_intersections(new_arc, arcs_at_x, disappearing_arcs_map);
 		if (arc_intersections.left_intersection != nullptr && arc_intersections.right_intersection != nullptr) {
 			add_new_arc_intersections(arc_intersections);
+		} else {
+			first_bachelors.insert(bachelor_points.begin(), bachelor_points.end());
 		}
 		beachline.insert(new_arc);
+	}
+	if (first_bachelors.size() > 2) {
+		for (int i = 1; i < first_bachelors.size(); i += 2) {
+			BachelorPoint<PointType>* b1 = *(first_bachelors.begin() + i);
+			BachelorPoint<PointType>* b2 = *(first_bachelors.begin() + i + 1);
+			PointType intersection_point((b1->point.x() + b2->point.x())/2, (b1->point.y() + b2->point.y())/2);
+			ArcIntersections<PointType> left_arc_intersection(b1->participating_beachline_arcs,  intersection_point);
+			arcs_intersections_set.insert(left_arc_intersection);
+			ArcIntersections<PointType> right_arc_intersection(b2->participating_beachline_arcs,  intersection_point);
+			arcs_intersections_set.insert(right_arc_intersection);
+		}
 	}
 }
 

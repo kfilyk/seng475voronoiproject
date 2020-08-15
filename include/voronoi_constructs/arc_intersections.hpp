@@ -69,6 +69,7 @@ namespace voronoi_constructs {
                 }
             }
         }
+        ArcIntersections(Arc<Point>* arc, Point* left_intersection, Point* right_intersection) : arc(arc), disappearing_arc(nullptr), left_intersection(left_intersection), right_intersection(right_intersection) {}
         Arc* arc;
         DisappearingArc disappearing_arc;
         Point* left_intersection;

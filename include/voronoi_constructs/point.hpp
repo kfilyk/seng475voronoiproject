@@ -19,6 +19,9 @@ namespace voronoi_constructs {
             bool x_is_less(Point other) {
                 return x() < other.x();
             }
+            bool operator==(Point other) {
+                return (x() == other.x()) && (y() == other.y());
+            }
         private:
             CoordType _x;
             CoordType _y;

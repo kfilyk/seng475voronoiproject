@@ -25,7 +25,7 @@ namespace voronoi_constructs {
                     // give each bachelor point knowledge of which arc owns it, so that they can be used as the source point 
                     // in completed edges formed in edge intersection events (since intersection events should only have knowledge of
                     // participating arcs, and are agnostic to bachelor points)
-                    (bachelor_point_ptr->arcs).push_back(this);
+                    (bachelor_point_ptr->participating_beachline_arcs).push_back(this);
                 }
             }
             bool operator<(const Arc<Point> other) {
@@ -52,6 +52,13 @@ namespace voronoi_constructs {
             public:
                 bool operator()(const Arc<Point> left, const Arc<Point> right) {
                     return point_comparators::x_is_less<Point>(left.focus(), right.focus());
+                }
+        };
+        template <class Point>
+        class ptr_focus_is_less {
+            public:
+                bool operator()(const Arc<Point>* left, const Arc<Point>* right) {
+                    return point_comparators::x_is_less<Point>(left->focus(), right->focus());
                 }
         };
     }
