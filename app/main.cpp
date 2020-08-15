@@ -58,7 +58,9 @@ ArcsVerticalInterceptsMap compute_arcs_at_x(PointType::CoordType x, PointType::C
 void free_bachelor_point(BachelorPoint<PointType>* bachelor_point) {
 	for (Arc<PointType>* arc : bachelor_point->participating_beachline_arcs) {
 		// unsubscribe the bachelor point from any participating arcs that may be owning it, and requires bachelor point knowledge of arcs that own it
-		(arc->bachelor_points).erase(bachelor_point);
+		if (arc != nullptr) { // arc pointer is nullptr in the case that the bachelor points are associated with the intercept at the top of the window (y = 0), when processing the first new sites
+			(arc->bachelor_points).erase(bachelor_point);
+		}
 	}
 	delete bachelor_point;
 }
@@ -135,8 +137,15 @@ void process_site_events(PointsContainer points) {
 		PointType::CoordType x = site_focus_point.x();
 		ArcsVerticalInterceptsMap arcs_at_x = compute_arcs_at_x(x, sweepline_y);
 		ArcsVerticalInterceptsMap::iterator arcs_at_x_iter = arcs_at_x.begin();
-		PointType first_arc_intersection_point = arcs_at_x_iter->first;
-		Arc<PointType>* first_arc = arcs_at_x_iter->second;
+		PointType first_arc_intersection_point;
+		Arc<PointType>* first_arc;
+		if (arcs_at_x_iter == arcs_at_x.end()) {
+			first_arc_intersection_point = PointType(x, 0);
+			first_arc = nullptr;
+		} else {
+			first_arc_intersection_point = arcs_at_x_iter->first;
+			first_arc = arcs_at_x_iter->second;
+		}
 
 		// instantiate bachelor points with knowledge of the arc they will eventually destroy (first_arc)
 		BachelorPoint<PointType>::BachelorPointsPtrSet bachelor_points {
@@ -164,10 +173,13 @@ void process_unresolved_bachelor_points() {
 	for (BachelorPoint<PointType>* bachelor_point : bachelor_points) {
 		PointType source_point = *bachelor_point;
 		ArcsPtrSet::iterator neighboring_beachline_arcs = bachelor_point->participating_beachline_arcs.begin();
-		Edge<PointType> arcs_connecting_edge(*neighboring_beachline_arcs, *(neighboring_beachline_arcs + 1));
-		Ray<PointType> perpendicular_ray = Ray<PointType>::perpendicular_to(arcs_connecting_edge);
-		PointType dest_point = perpendicular_ray.closest_intersection_to_boundaries();
-		voronoi_graph.push_back(Edge<PointType>(source_point, dest_point));
+		if (*neighboring_beachline_arcs != nullptr) {
+			Edge<PointType> arcs_connecting_edge(*neighboring_beachline_arcs, *(neighboring_beachline_arcs + 1));
+			Ray<PointType> perpendicular_ray = Ray<PointType>::perpendicular_to(arcs_connecting_edge);
+			PointType dest_point = perpendicular_ray.closest_intersection_to_boundaries();
+			voronoi_graph.push_back(Edge<PointType>(source_point, dest_point));
+		} // if the bachelor point doesn't have neighbouring arcs on the beachline, this means it is a corner case where the voronoi graph
+		  // consists of sites along one iteration of the sweepline
 	}
 }
 

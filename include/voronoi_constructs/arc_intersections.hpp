@@ -16,7 +16,7 @@ namespace voronoi_constructs {
             if (intercepts_map.size() > 0) {
                 Point focus = arc.get_focus();
                 Point::CoordType x = focus.x();
-                Point::CoordType sweepline_y = focus.y().
+                Point::CoordType sweepline_y = focus.y();
                 ArcsVerticalInterceptsMap::iterator vertical_intercepts_iter = intercepts_map.begin();
                 Arc<Point>* first_intercepting_arc = vertical_intercepts_iter -> second;
                 if (first_intercepting_arc->y() < 0) {
@@ -41,23 +41,31 @@ namespace voronoi_constructs {
 
                 // intermediary container for the purpose of sorting the intersection points according to x,
                 // for assignment as left and right intercepts flanking the new arc
-                std::set<Point, point_comparators::ptr_x_is_less<Point>> intersections;
+                std::map<Point, Arc<Point>*, point_comparators::ptr_x_is_less<Point>> intersections;
                 while (vertical_intercepts_iter++ != intercepts_map.end()) {
                     intercepting_arc = vertical_intercepts_iter->second;
                     t2 = intercepting_arc->tangent_slope(x, sweepline_y);
                     b2 = intercepting_arc->compute_y(x, sweepline_y);
                     intersect_x = (b2-b1)/(t1-t2);
                     intersect_y = b1 + (intersect_x * (t1-t2));
-                    intersections.insert(Point(intersect_x, intersect_y));
+                    intersections.insert(Point(intersect_x, intersect_y), intercepting_arc);
                 }
                 Point arc_focus = arc->get_focus();
                 intersections.insert(arc_focus);
                 ArcIntersectionsSet::iterator iter = intersections.find(arc_focus);
                 if (iter != intersections.begin()) { // there's no intersection to the left
-                    left_intersection = *(iter - 1);
+                    left_intersection = (iter - 1)->first;
                 }
-                if (iter != intersections.end() - 1) { // there's no intersection to the right
-                    right_intersection = *(iter + 1);
+                if (iter != (intersections.end() - 1)) { // there's no intersection to the right
+                    right_intersection = (iter + 1)->first;
+                }
+                for (auto bachelor_point : arc->bachelor_points) {
+                    if (iter != intersections.begin()) {
+                        bachelor_point.participating_beachline_arcs.insert((iter - 1)->second);
+                    }
+                    if (iter != (intersections.end() - 1)) {
+                        bachelor_point.participating_beachline_arcs.insert((iter + 1)->second);
+                    }
                 }
             }
         }
