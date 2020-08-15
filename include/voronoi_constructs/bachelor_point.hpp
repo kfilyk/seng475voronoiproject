@@ -5,7 +5,7 @@ namespace voronoi_constructs {
         using BachelorPointsPtrSet = std::set<BachelorPoint*, bachelor_point_comparators::ptr_bachelor_point_is_less<Point>>;
         Point point;
         ArcsPtrSet participating_beachline_arcs;
-        BachelorPoint(Point point, std::vector<Arc<Point>*> arcs) : point(point) {
+        BachelorPoint(Point point, ArcsPtrSet arcs = ArcsPtrSet()) : point(point) {
             this->participating_beachline_arcs = arcs;
         }
         Point closest_intersection_to_boundaries() {

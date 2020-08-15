@@ -98,11 +98,10 @@ void process_intersections() {
 }
 
 void add_new_arc_intersections(ArcIntersections<PointType> arc_intersections) {
-	ArcIntersections<PointType>::ArcIntersectionsSet insertion_position = arcs_intersections_set.insert(arc_intersections);
-	ArcIntersections<PointType>* left_arc_intersections = insertion_position - 1;
-	ArcIntersections<PointType>* new_arc_intersections = insertion_position;
-	ArcIntersections<PointType>* right_arc_intersections = insertion_position + 1;
-	if ((insertion_position != arcs_intersections_set.begin()) && (insertion_position != (arcs_intersections_set.end() - 1))) {
+	ArcIntersections<PointType>* new_arc_intersections = arcs_intersections_set.insert(arc_intersections);
+	if ((new_arc_intersections != arcs_intersections_set.begin()) && (new_arc_intersections != (arcs_intersections_set.end() - 1))) {
+		ArcIntersections<PointType>* left_arc_intersections = new_arc_intersections - 1;
+		ArcIntersections<PointType>* right_arc_intersections = new_arc_intersections + 1;
 		PointType* right_intersection_of_left_arc = left_arc_intersections->right_intersection;
 		PointType* left_intersection_of_new_arc = new_arc_intersections->left_intersection;
 		if (left_intersection_of_new_arc != nullptr && right_intersection_of_left_arc != nullptr) {
@@ -147,10 +146,9 @@ void process_site_events(PointsContainer points) {
 			first_arc = arcs_at_x_iter->second;
 		}
 
-		// instantiate bachelor points with knowledge of the arc they will eventually destroy (first_arc)
 		BachelorPoint<PointType>::BachelorPointsPtrSet bachelor_points {
-			new BachelorPoint<PointType>(first_arc_intersection_point, std::vector<Arc<PointType>*>{first_arc}),
-			new BachelorPoint<PointType>(first_arc_intersection_point, std::vector<Arc<PointType>*>{first_arc})
+			new BachelorPoint<PointType>(first_arc_intersection_point),
+			new BachelorPoint<PointType>(first_arc_intersection_point)
 		};
 
 		// give the new arc knowledge of the bachelor points it owns
@@ -173,13 +171,14 @@ void process_unresolved_bachelor_points() {
 	for (BachelorPoint<PointType>* bachelor_point : bachelor_points) {
 		PointType source_point = *bachelor_point;
 		ArcsPtrSet::iterator neighboring_beachline_arcs = bachelor_point->participating_beachline_arcs.begin();
+		// if the bachelor point doesn't have neighbouring arcs on the beachline, this means it is a corner case where the voronoi graph
+		// consists of sites along one iteration of the sweepline, in which case it is nullptr and the code segment is ignored
 		if (*neighboring_beachline_arcs != nullptr) {
 			Edge<PointType> arcs_connecting_edge(*neighboring_beachline_arcs, *(neighboring_beachline_arcs + 1));
 			Ray<PointType> perpendicular_ray = Ray<PointType>::perpendicular_to(arcs_connecting_edge);
 			PointType dest_point = perpendicular_ray.closest_intersection_to_boundaries();
 			voronoi_graph.push_back(Edge<PointType>(source_point, dest_point));
-		} // if the bachelor point doesn't have neighbouring arcs on the beachline, this means it is a corner case where the voronoi graph
-		  // consists of sites along one iteration of the sweepline
+		}
 	}
 }
 
