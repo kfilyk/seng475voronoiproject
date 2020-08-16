@@ -1,9 +1,6 @@
 cmake_minimum_required(VERSION 3.17 FATAL_ERROR)
 project(voronoi LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
-find_package(CGAL)
-find_package(boost COMPONENTS container)
-include_directories(${Boost_INCLUDE_DIRS})
 include_directories(include)
 
 option(ENABLE_COVERAGE "Enable coverage" false)
@@ -15,17 +12,15 @@ if(ENABLE_COVERAGE)
 	include(CodeCoverage.cmake)
 	append_coverage_compiler_flags()
 endif()
-add_executable(test_voronoi ./app/tests/test_voronoi.cpp)
-target_link_libraries(test_voronoi CGAL::CGAL)
-add_executable(gen_points ./app/utilities/gen_points.cpp)
+add_executable(main ./app/main.cpp)
 if(ENABLE_COVERAGE)
 	setup_target_for_coverage_lcov(
 		NAME coverage
-		EXECUTABLE ${CMAKE_CURRENT_BINARY_DIR}/test_voronoi
-		EXECUTABLE ${CMAKE_CURRENT_BINARY_DIR}/gen_points
+		EXECUTABLE ${CMAKE_CURRENT_BINARY_DIR}/main
 		LCOV_ARGS --rc lcov_branch_coverage=1
 		GENHTML_ARGS --legend --branch-coverage
-		DEPENDENCIES test_voronoi gen_points)
+		DEPENDENCIES main
+	)
 endif()
 
 
