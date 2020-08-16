@@ -38,5 +38,12 @@ namespace voronoi_constructs {
             }
             vertex_iter->add_edge(edge_ptr);
         }
+        friend std::ostream &operator<<(std::ostream &output, const VoronoiGraph &graph) {
+            output << "\n";
+            for (auto edge : edges) {
+                output << "[(" << (edge->source.x()) << ", " << (edge->source.y()) << "), (" << (edge->dest.x()) << ", " << (edge->dest.y()) << ")]\n";
+            }
+            return output;
+        }
     };
 }

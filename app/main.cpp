@@ -11,6 +11,7 @@
 #include <bachelor_point.hpp>
 #include <ray.hpp>
 #include <voronoi_graph.hpp>
+#include <iostream>
 
 using namespace voronoi_constructs;
 using PointType = Point<int>;
@@ -209,4 +210,5 @@ int main() {
     }
 	process_intersections();
 	process_unresolved_bachelor_points();
+	std::cout << voronoi_graph;
 }
